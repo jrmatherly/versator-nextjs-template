@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import * as React from "react";
 
+import { AlertCard } from "~/components/alert-card";
 import {
   PageHeader,
   PageHeaderDescription,
@@ -26,8 +27,9 @@ export default function BlogPage() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <Shell className="md:pb-10">
-      <PageHeader>
+    <Shell className="md:pb-10 mt-20">
+      <AlertCard />
+      {/* <PageHeader>
         <PageHeaderHeading>Blog</PageHeaderHeading>
         <PageHeaderDescription>
           Explore the latest news and updates from the community
@@ -44,7 +46,7 @@ export default function BlogPage() {
             <PostCard key={post.slug} post={post} i={i} />
           ))}
         </React.Suspense>
-      </section>
+      </section> */}
     </Shell>
   );
 }

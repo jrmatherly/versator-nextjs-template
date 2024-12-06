@@ -29,36 +29,29 @@ type AuthDropdownProps = {
 } & React.ComponentPropsWithRef<typeof DropdownMenuTrigger> &
   ButtonProps;
 
-export async function AuthDropdown({
-  user,
-  className,
-  ...props
-}: AuthDropdownProps) {
+export async function AuthDropdown({ user, ...props }: AuthDropdownProps) {
   if (!user) {
     return (
-      <div className="flex items-center gap-2">
-        <Button
-          size="sm"
-          variant="outline"
-          className={cn(className)}
-          {...props}
-          asChild
-        >
-          <Link href="/signin">
-            Sign In
-            <span className="sr-only">Sign In</span>
-          </Link>
-        </Button>
-        <Button
-          size="sm"
-          variant="default"
-          className={cn(className)}
-          {...props}
-          asChild
-        >
-          <Link href="/signup">Sign Up</Link>
-        </Button>
-      </div>
+      <>
+        <div className="flex items-center gap-2 sm:hidden">
+          <Button size="sm" variant="default" {...props} asChild>
+            <Link href="/signin">
+              Sign In<span className="sr-only">Sign In</span>
+            </Link>
+          </Button>
+        </div>
+
+        <div className="hidden items-center gap-2 sm:flex">
+          <Button size="sm" variant="outline" {...props} asChild>
+            <Link href="/signin">
+              Sign In<span className="sr-only">Sign In</span>
+            </Link>
+          </Button>
+          <Button size="sm" variant="default" {...props} asChild>
+            <Link href="/signup">Sign Up</Link>
+          </Button>
+        </div>
+      </>
     );
   }
 
@@ -80,11 +73,7 @@ export async function AuthDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          className={cn("size-8 rounded-full", className)}
-          {...props}
-        >
+        <Button variant="outline" className="size-8 rounded-full" {...props}>
           <Avatar className="size-8">
             <AvatarImage src={user.imageUrl} alt={user.username ?? ""} />
             <AvatarFallback>{initials}</AvatarFallback>

@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Explorez les magasins du monde entier",
   "featuredStoresTitle": "Magasins en vedette",
   "viewAllProducts": "Voir tous les produits",
-  "viewAllStores": "Voir tous les magasins"
+  "viewAllStores": "Voir tous les magasins",
+  "description": "La ressource a peut-être été déplacée, renommée ou peut ne pas exister. \nVérifiez l'URL ou utilisez le menu pour naviguer.",
+  "go-home": "Retour à la maison",
+  "not-found": {
+    "description": "La ressource a peut-être été déplacée, renommée ou peut ne pas exister. \nVérifiez l'URL ou utilisez le menu pour naviguer.",
+    "go-home": "Retour à la maison",
+    "title": "🫠 Page introuvable ! \n🫠"
+  },
+  "title": "🫠 Page introuvable ! \n🫠"
 }

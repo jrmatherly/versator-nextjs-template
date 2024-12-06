@@ -488,6 +488,11 @@
     "verifyEmail": "Verify Email",
     "waysToDonate": "Ways to Donate"
   },
+  "not-found": {
+    "description": "The resource might have been moved, renamed, or might not exist. Verify the URL or use the menu to navigate.",
+    "go-home": "Return Home",
+    "title": "🫠 Page Not Found! 🫠"
+  },
   "pages": {
     "not-found": {
       "description": "The resource might have been moved, renamed, or might not exist. Verify the URL or use the menu to navigate.",
@@ -606,5 +611,8 @@
   "featuredStoresDescription": "Explore stores from around the world",
   "featuredStoresTitle": "Featured stores",
   "viewAllProducts": "View all products",
-  "viewAllStores": "View all stores"
+  "viewAllStores": "View all stores",
+  "title": "🫠 Page Not Found! 🫠",
+  "description": "The resource might have been moved, renamed, or might not exist. Verify the URL or use the menu to navigate.",
+  "go-home": "Return Home"
 }

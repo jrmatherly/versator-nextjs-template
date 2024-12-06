@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Entdecken Sie Geschäfte aus der ganzen Welt",
   "featuredStoresTitle": "Ausgewählte Geschäfte",
   "viewAllProducts": "Alle Produkte ansehen",
-  "viewAllStores": "Alle Geschäfte anzeigen"
+  "viewAllStores": "Alle Geschäfte anzeigen",
+  "description": "Die Ressource wurde möglicherweise verschoben, umbenannt oder ist möglicherweise nicht vorhanden. \nÜberprüfen Sie die URL oder verwenden Sie das Menü zur Navigation.",
+  "go-home": "Heimkehr",
+  "not-found": {
+    "description": "Die Ressource wurde möglicherweise verschoben, umbenannt oder ist möglicherweise nicht vorhanden. \nÜberprüfen Sie die URL oder verwenden Sie das Menü zur Navigation.",
+    "go-home": "Heimkehr",
+    "title": "🫠 Seite nicht gefunden! \n🫠"
+  },
+  "title": "🫠 Seite nicht gefunden! \n🫠"
 }

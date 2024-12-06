@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Esplora negozi da tutto il mondo",
   "featuredStoresTitle": "Negozi in evidenza",
   "viewAllProducts": "Visualizza tutti i prodotti",
-  "viewAllStores": "Visualizza tutti i negozi"
+  "viewAllStores": "Visualizza tutti i negozi",
+  "description": "La risorsa potrebbe essere stata spostata, rinominata o potrebbe non esistere. \nVerifica l'URL o utilizza il menu per navigare.",
+  "go-home": "Ritorno a casa",
+  "not-found": {
+    "description": "La risorsa potrebbe essere stata spostata, rinominata o potrebbe non esistere. \nVerifica l'URL o utilizza il menu per navigare.",
+    "go-home": "Ritorno a casa",
+    "title": "🫠 Pagina non trovata! \n🫠"
+  },
+  "title": "🫠 Pagina non trovata! \n🫠"
 }

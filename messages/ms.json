@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Terokai kedai dari seluruh dunia",
   "featuredStoresTitle": "Kedai pilihan",
   "viewAllProducts": "Lihat semua produk",
-  "viewAllStores": "Lihat semua kedai"
+  "viewAllStores": "Lihat semua kedai",
+  "description": "Sumber mungkin telah dialihkan, dinamakan semula atau mungkin tidak wujud. \nSahkan URL atau gunakan menu untuk menavigasi.",
+  "go-home": "Balik Rumah",
+  "not-found": {
+    "description": "Sumber mungkin telah dialihkan, dinamakan semula atau mungkin tidak wujud. \nSahkan URL atau gunakan menu untuk menavigasi.",
+    "go-home": "Balik Rumah",
+    "title": "🫠 Halaman Tidak Ditemui! \n🫠"
+  },
+  "title": "🫠 Halaman Tidak Ditemui! \n🫠"
 }

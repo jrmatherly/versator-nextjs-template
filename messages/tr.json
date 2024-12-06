@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Dünyanın dört bir yanından mağazaları keşfedin",
   "featuredStoresTitle": "Öne çıkan mağazalar",
   "viewAllProducts": "Tüm ürünleri görüntüle",
-  "viewAllStores": "Tüm mağazaları görüntüle"
+  "viewAllStores": "Tüm mağazaları görüntüle",
+  "description": "Kaynak taşınmış, yeniden adlandırılmış veya mevcut olmayabilir. \nURL'yi doğrulayın veya gezinmek için menüyü kullanın.",
+  "go-home": "Eve Dönüş",
+  "not-found": {
+    "description": "Kaynak taşınmış, yeniden adlandırılmış veya mevcut olmayabilir. \nURL'yi doğrulayın veya gezinmek için menüyü kullanın.",
+    "go-home": "Eve Dönüş",
+    "title": "🫠 Sayfa Bulunamadı! \n🫠"
+  },
+  "title": "🫠 Sayfa Bulunamadı! \n🫠"
 }

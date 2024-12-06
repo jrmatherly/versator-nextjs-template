@@ -606,5 +606,13 @@
   "featuredStoresDescription": "探索世界各地的商店",
   "featuredStoresTitle": "特色店铺",
   "viewAllProducts": "查看所有产品",
-  "viewAllStores": "查看所有商店"
+  "viewAllStores": "查看所有商店",
+  "description": "该资源可能已被移动、重命名或可能不存在。\n验证 URL 或使用菜单进行导航。",
+  "go-home": "回家",
+  "not-found": {
+    "description": "该资源可能已被移动、重命名或可能不存在。\n验证 URL 或使用菜单进行导航。",
+    "go-home": "回家",
+    "title": "🫠 页面未找到！ \n🫠"
+  },
+  "title": "🫠 页面未找到！ \n🫠"
 }

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { NextIntlClientProvider } from "next-intl";
@@ -22,6 +21,8 @@ import { routing } from "~/i18n/routing";
 import { getCachedUser } from "~/lib/queries/user";
 import "~/styles/globals.css";
 import { cn } from "~/utils";
+
+// import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const fontSans = GeistSans;
 const fontMono = GeistMono;
@@ -96,17 +97,17 @@ export const viewport: Viewport = {
   ],
 };
 
-type RootLayoutProps = {
+// modal: React.ReactNode;
+type LocaleLayoutProps = {
   children: React.ReactNode;
-  modal: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({
+// modal,
+export default async function LocaleLayout({
   children,
-  modal,
   params,
-}: Readonly<RootLayoutProps>) {
+}: Readonly<LocaleLayoutProps>) {
   const user = await getCachedUser();
 
   // Await the params object
@@ -144,7 +145,7 @@ export default async function RootLayout({
                   <AppHeader user={user} />
                   <main className="flex flex-1 flex-col gap-4 px-2 items-center mt-2">
                     {children}
-                    {modal}
+                    {/* {modal} */}
                   </main>
                   <AppFooter />
                   <TailwindIndicator />
@@ -154,7 +155,7 @@ export default async function RootLayout({
               </div>
             </NuqsAdapter>
           </ThemeProvider>
-          <VercelAnalytics />
+          {/* <VercelAnalytics /> */}
         </body>
       </html>
     </ClerkProvider>

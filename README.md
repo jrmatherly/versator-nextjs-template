@@ -1,9 +1,10 @@
 # Relivator Next.js Template
 
 - **🚀 Live Demo**: [relivator.com](https://relivator.com/en)
-- **📚 Documentation**: [docs.reliverse.org/relivator](https://docs.reliverse.org/relivator)
+- **💙 Discord**: [discord.gg/Pb8uKbwpsJ](https://discord.gg/Pb8uKbwpsJ)
+- **📚 Docs**: [docs.reliverse.org](https://docs.reliverse.org/relivator)
 
-The Relivator template serves as the foundation for your eCommerce platform, helping you create efficient, engaging, and profitable online stores. Relivator enhances any eCommerce with the power of Next.js 15, modern React, TypeScript, Tailwind, and more. For detailed information about the Relivator template and its bootstrapper, [Reliverse](https://github.com/blefnk/reliverse-website-builder), please visit the [documentation website](https://docs.reliverse.org).
+The Relivator template serves as the foundation for your eCommerce platform, helping you create efficient, engaging, and profitable online stores. Relivator enhances any eCommerce with the power of Next.js 15, modern React, TypeScript, Tailwind, and more. For detailed information about the Relivator template and its bootstrapper, [Reliverse](https://github.com/reliverse/cli), please visit the [documentation website](https://docs.reliverse.org).
 
 ## Stack of technologies
 

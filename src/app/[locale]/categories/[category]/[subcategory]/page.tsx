@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { AlertCard } from "~/components/alert-card";
 import {
   PageHeader,
   PageHeaderDescription,
@@ -14,28 +15,35 @@ import { toTitleCase, unslugify } from "~/lib/utils";
 import { productsSearchParamsSchema } from "~/lib/validations/params";
 
 type SubcategoryPageProps = {
-  params: {
+  params: Promise<{
     category: string;
     subcategory: string;
-  };
+  }>;
   searchParams: Record<string, string | string[] | undefined>;
 };
 
-export function generateMetadata({ params }: SubcategoryPageProps): Metadata {
-  const subcategory = unslugify(params.subcategory);
+/* export async function generateMetadata({
+  params,
+}: SubcategoryPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { category, subcategory } = resolvedParams;
+  const subcategoryTitle = unslugify(subcategory);
 
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
-    title: toTitleCase(subcategory),
-    description: `Buy the best ${subcategory}`,
+    title: toTitleCase(subcategoryTitle),
+    description: `Buy the best ${subcategoryTitle}`,
   };
-}
+} */
 
 export default async function SubcategoryPage({
   params,
   searchParams,
 }: SubcategoryPageProps) {
-  const { category, subcategory } = params;
+  /* const resolvedParams = await params;
+  const { category, subcategory } = resolvedParams;
+
+  const subcategoryTitle = unslugify(subcategory);
   const { page, per_page, sort, price_range, store_ids, store_page, active } =
     productsSearchParamsSchema.parse(searchParams);
 
@@ -52,18 +60,19 @@ export default async function SubcategoryPage({
       ? (parseInt(store_page) - 1) * storesLimit
       : 0;
 
-  const storesTransaction = await getStores(searchParams);
+  const storesTransaction = await getStores(searchParams); */
 
   return (
-    <Shell>
-      <PageHeader>
+    <Shell className="mt-20">
+      <AlertCard />
+      {/* <PageHeader>
         <PageHeaderHeading size="sm">
-          {toTitleCase(unslugify(subcategory))}
+          {toTitleCase(subcategoryTitle)}
         </PageHeaderHeading>
         <PageHeaderDescription size="sm">
-          {`Buy the best ${unslugify(subcategory)}`}
+          {`Buy the best ${subcategoryTitle}`}
         </PageHeaderDescription>
-      </PageHeader>
+      </PageHeader> */}
       {/* <Products
         products={productsTransaction.data}
         pageCount={productsTransaction.pageCount}

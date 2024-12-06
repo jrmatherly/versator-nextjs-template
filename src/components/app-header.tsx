@@ -7,7 +7,7 @@ import { AuthDropdown } from "~/components/layouts/auth-dropdown";
 import { ProductsCombobox } from "~/components/products-combobox";
 import { siteConfig } from "~/config/site";
 
-import { MoreProductSheet } from "./by-bleverse";
+import { ByBleverseSheet } from "./by-bleverse";
 import { LocaleSwitcher } from "./i18n/LocaleSwitcher";
 import { Icons } from "./icons";
 import { Navigation } from "./layouts/navigation";
@@ -32,7 +32,7 @@ export default function AppHeader({ user }: { user: User | null }) {
         <AuthDropdown user={user} />
         <LocaleSwitcher />
         <ThemeSwitcher variant="outline" />
-        <MoreProductSheet />
+        <ByBleverseSheet />
       </div>
     </header>
   );

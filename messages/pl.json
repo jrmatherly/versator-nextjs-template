@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Przeglądaj sklepy z całego świata",
   "featuredStoresTitle": "Polecane sklepy",
   "viewAllProducts": "Zobacz wszystkie produkty",
-  "viewAllStores": "Zobacz wszystkie sklepy"
+  "viewAllStores": "Zobacz wszystkie sklepy",
+  "description": "Zasób mógł zostać przeniesiony, zmieniono jego nazwę lub mógł nie istnieć. \nSprawdź adres URL lub użyj menu do nawigacji.",
+  "go-home": "Wróć do domu",
+  "not-found": {
+    "description": "Zasób mógł zostać przeniesiony, zmieniono jego nazwę lub mógł nie istnieć. \nSprawdź adres URL lub użyj menu do nawigacji.",
+    "go-home": "Wróć do domu",
+    "title": "🫠 Nie znaleziono strony! \n🫠"
+  },
+  "title": "🫠 Nie znaleziono strony! \n🫠"
 }

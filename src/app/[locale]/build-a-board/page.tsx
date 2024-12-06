@@ -3,6 +3,7 @@ import { type Metadata } from "next";
 import { cookies } from "next/headers";
 import Link from "next/link";
 
+import { AlertCard } from "~/components/alert-card";
 import { BoardBuilder } from "~/components/board-builder";
 import {
   PageHeader,
@@ -29,14 +30,14 @@ type BuildABoadPageProps = {
 export default async function BuildABoardPage({
   searchParams,
 }: BuildABoadPageProps) {
-  const { page, per_page, sort, subcategory, price_range, active } =
-    productsSearchParamsSchema.parse(searchParams);
+  // const { page, per_page, sort, subcategory, price_range, active } =
+  // productsSearchParamsSchema.parse(searchParams);
 
   // Products transaction
-  const limit = typeof per_page === "string" ? parseInt(per_page) : 8;
-  const offset = typeof page === "string" ? (parseInt(page) - 1) * limit : 0;
-  const activeSubcategory =
-    typeof subcategory === "string" ? subcategory : "decks";
+  // const limit = typeof per_page === "string" ? parseInt(per_page) : 8;
+  // const offset = typeof page === "string" ? (parseInt(page) - 1) * limit : 0;
+  // const activeSubcategory =
+  //   typeof subcategory === "string" ? subcategory : "decks";
 
   // const { data, pageCount } = await getProducts({
   //   limit,
@@ -48,12 +49,13 @@ export default async function BuildABoardPage({
   // })
 
   // Get cart items
-  const cartId = (await cookies()).get("cartId")?.value;
-  const cartItems = await getCartItems({ cartId });
+  // const cartId = (await cookies()).get("cartId")?.value;
+  // const cartItems = await getCartItems({ cartId });
 
   return (
-    <Shell className="gap-4">
-      <PageHeader
+    <Shell className="gap-4 mt-20">
+      <AlertCard />
+      {/* <PageHeader
         id="build-a-board-header"
         aria-labelledby="build-a-board-header-heading"
       >
@@ -61,7 +63,7 @@ export default async function BuildABoardPage({
         <PageHeaderDescription size="sm">
           Select the components for your board
         </PageHeaderDescription>
-      </PageHeader>
+      </PageHeader> */}
       {/* <section
         className="sticky top-14 z-30 w-full shrink-0 overflow-hidden bg-background/50 pb-4 pt-6 shadow-md sm:backdrop-blur"
       >

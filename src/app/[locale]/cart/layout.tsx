@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import * as React from "react";
 
-import { SiteHeader } from "~/components/layouts/site-header";
 import { getCachedUser } from "~/lib/queries/user";
 
 export default async function CartLayout({
@@ -15,7 +14,6 @@ export default async function CartLayout({
 
   return (
     <div className="relative flex min-h-screen flex-col">
-      <SiteHeader user={user} />
       <main className="flex-1">{children}</main>
     </div>
   );

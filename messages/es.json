@@ -606,5 +606,13 @@
   "featuredStoresDescription": "Explora tiendas de todo el mundo.",
   "featuredStoresTitle": "Tiendas destacadas",
   "viewAllProducts": "Ver todos los productos",
-  "viewAllStores": "Ver todas las tiendas"
+  "viewAllStores": "Ver todas las tiendas",
+  "description": "Es posible que el recurso se haya movido, haya cambiado de nombre o que no exista. \nVerifique la URL o use el menú para navegar.",
+  "go-home": "Regresar a casa",
+  "not-found": {
+    "description": "Es posible que el recurso se haya movido, haya cambiado de nombre o que no exista. \nVerifique la URL o use el menú para navegar.",
+    "go-home": "Regresar a casa",
+    "title": "🫠 ¡Página no encontrada! \n🫠"
+  },
+  "title": "🫠 ¡Página no encontrada! \n🫠"
 }

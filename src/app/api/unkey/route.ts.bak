@@ -1,0 +1,70 @@
+import { Unkey } from "@unkey/api";
+import { NextResponse } from "next/server";
+
+/**
+ * Handles POST requests to the /api/unkey endpoint.
+ * Expects a JSON body with `id`, `redirect`, and `code` fields.
+ */
+export async function POST(request: Request) {
+	console.log("[unkey/POST] Received a POST request.");
+
+	try {
+		// Parse the JSON body
+		const { id, redirect, code } = await request.json();
+		console.log(
+			`[unkey/POST] Parsed data - id: ${id}, redirect: ${redirect}, code: ${code}`,
+		);
+
+		// Validate environment variables
+		if (!process.env.UNKEY_ROOT_KEY || !process.env.UNKEY_API_ID) {
+			console.error(
+				"[unkey/POST] Missing environment variables: UNKEY_ROOT_KEY or UNKEY_API_ID.",
+			);
+			return NextResponse.json(
+				{
+					statusCode: 500,
+					message: "Unkey root key and API ID must be provided.",
+				},
+				{ status: 500 },
+			);
+		}
+
+		// Initialize Unkey instance
+		const unkey = new Unkey({ rootKey: process.env.UNKEY_ROOT_KEY });
+		console.log("[unkey/POST] Initialized Unkey instance.");
+
+		// Attempt to create a new key
+		console.log("[unkey/POST] Attempting to create a new key with Unkey.");
+		const { result, error } = await unkey.keys.create({
+			apiId: process.env.UNKEY_API_ID,
+			prefix: "cli_",
+			ownerId: id,
+		});
+		console.log("[unkey/POST] Unkey response received.");
+
+		if (error) {
+			console.error(
+				`[unkey/POST] Error creating key: ${error.message || error}`,
+			);
+			return NextResponse.json(
+				{
+					statusCode: 500,
+					message: "Error creating key – please ensure apiId is valid.",
+				},
+				{ status: 500 },
+			);
+		}
+
+		console.log("[unkey/POST] Key created successfully:", result);
+		return NextResponse.json({ ...result, code, redirect });
+	} catch (error) {
+		console.error("[unkey/POST] Unexpected error:", error);
+		return NextResponse.json(
+			{
+				statusCode: 500,
+				message: "Internal Server Error",
+			},
+			{ status: 500 },
+		);
+	}
+}

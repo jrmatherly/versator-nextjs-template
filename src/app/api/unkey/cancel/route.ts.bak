@@ -1,0 +1,51 @@
+import { ofetch } from "ofetch";
+
+/**
+ * Handles POST requests to the /api/unkey/cancel endpoint.
+ * Expects a JSON body with a `localServer` field.
+ */
+export async function POST(req: Request) {
+	console.log("[unkey/cancel/POST] Received a POST request.");
+
+	try {
+		// Parse the JSON body
+		const { localServer } = await req.json();
+		console.log(`[unkey/cancel/POST] Parsed localServer URL: ${localServer}`);
+
+		if (!localServer) {
+			console.error(
+				"[unkey/cancel/POST] No localServer URL provided in the request body.",
+			);
+			return new Response("localServer URL is required.", { status: 400 });
+		}
+
+		// Attempt to send a cancellation request to the local server
+		console.log(
+			`[unkey/cancel/POST] Attempting to send cancellation to: ${localServer}`,
+		);
+		const fetchResponse = await ofetch(localServer, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ cancel: true }),
+		});
+		console.log(
+			`[unkey/cancel/POST] Cancellation request response status: ${fetchResponse.status}`,
+		);
+
+		return new Response("ok", { status: 200 });
+	} catch (error) {
+		console.error(
+			`[unkey/cancel/POST] Error cancelling login process: ${
+				error instanceof Error ? error.message : error
+			}`,
+		);
+		return new Response(
+			`Error cancelling login process: ${
+				error instanceof Error ? error.message : "Unknown error"
+			}`,
+			{ status: 500 },
+		);
+	}
+}

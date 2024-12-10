@@ -16,10 +16,10 @@ import {
 } from "~/components/ui/accordion";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Separator } from "~/components/ui/separator";
-import { db } from "~/db";
-import { categories, products, stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { formatPrice, toTitleCase } from "~/lib/utils";
+import { db } from "~/server/db";
+import { categories, products, stores } from "~/server/db/schema";
+import { formatPrice, toTitleCase } from "~/server/utils";
 
 import { AddToCartForm } from "./_components/add-to-cart-form";
 import { UpdateProductRatingButton } from "./_components/update-product-rating-button";

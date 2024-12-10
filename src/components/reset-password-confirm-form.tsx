@@ -27,8 +27,8 @@ import {
 } from "~/components/ui/input-otp";
 import { Toaster } from "~/components/ui/toaster";
 import { useToast } from "~/hooks/use-toast";
-import { showErrorToast } from "~/lib/handle-error";
-import { resetPasswordSchema } from "~/lib/validations/auth";
+import { showErrorToast } from "~/server/handle-error";
+import { resetPasswordSchema } from "~/server/validations/auth";
 
 type Inputs = z.infer<typeof resetPasswordSchema>;
 

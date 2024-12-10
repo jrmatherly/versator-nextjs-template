@@ -6,7 +6,7 @@ import type { SidebarNavItem } from "~/types";
 
 import { Icons } from "~/components/icons";
 import { useSidebar } from "~/components/layouts/sidebar-provider";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export type SidebarNavProps = {
   items: SidebarNavItem[];

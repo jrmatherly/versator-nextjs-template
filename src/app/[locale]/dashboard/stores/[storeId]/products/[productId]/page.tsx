@@ -9,10 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import { db } from "~/db";
-import { products } from "~/db/schema";
 import { env } from "~/env.js";
-import { getCategories, getSubcategories } from "~/lib/queries/product";
+import { db } from "~/server/db";
+import { products } from "~/server/db/schema";
+import { getCategories, getSubcategories } from "~/server/queries/product";
 
 import { UpdateProductForm } from "./_components/update-product-form";
 

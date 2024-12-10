@@ -11,15 +11,15 @@ export default function AppFooter() {
             target="_blank"
             className="inline-flex gap-0.5 items-center hover:text-foreground"
           >
-            Install Template
+            Relivator Docs
             <ExternalLink className="w-3 h-3" />
           </Link>
           <Link
-            href="https://github.com/blefnk/versator"
+            href="https://github.com/blefnk/relivator#readme"
             target="_blank"
             className="inline-flex gap-0.5 items-center hover:text-foreground"
           >
-            GitHub
+            Download Template
             <ExternalLink className="w-3 h-3" />
           </Link>
         </nav>

@@ -9,10 +9,10 @@ import {
 import { Products } from "~/components/products";
 import { Shell } from "~/components/shell";
 import { env } from "~/env.js";
-import { getProducts } from "~/lib/queries/product";
-import { getStores } from "~/lib/queries/store";
-import { toTitleCase, unslugify } from "~/lib/utils";
-import { productsSearchParamsSchema } from "~/lib/validations/params";
+import { getProducts } from "~/server/queries/product";
+import { getStores } from "~/server/queries/store";
+import { toTitleCase, unslugify } from "~/server/utils";
+import { productsSearchParamsSchema } from "~/server/validations/params";
 
 type SubcategoryPageProps = {
   params: Promise<{

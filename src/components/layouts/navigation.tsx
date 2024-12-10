@@ -33,7 +33,7 @@ import {
 } from "~/components/ui/sheet";
 import { siteConfig } from "~/config/site";
 import { useMediaQuery } from "~/hooks/use-media-query";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 // ListItem component for NavigationMenu
 const ListItem = React.forwardRef<

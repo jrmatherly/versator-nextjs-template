@@ -37,18 +37,18 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Textarea } from "~/components/ui/textarea";
-import { type Product } from "~/db/schema";
 import { useUploadFile } from "~/hooks/use-upload-file";
-import { deleteProduct, updateProduct } from "~/lib/actions/product";
-import { getErrorMessage } from "~/lib/handle-error";
+import { deleteProduct, updateProduct } from "~/server/actions/product";
+import { type Product } from "~/server/db/schema";
+import { getErrorMessage } from "~/server/handle-error";
 import {
   type getCategories,
   type getSubcategories,
-} from "~/lib/queries/product";
+} from "~/server/queries/product";
 import {
   updateProductSchema,
   type UpdateProductSchema,
-} from "~/lib/validations/product";
+} from "~/server/validations/product";
 
 type UpdateProductFormProps = {
   product: Product;

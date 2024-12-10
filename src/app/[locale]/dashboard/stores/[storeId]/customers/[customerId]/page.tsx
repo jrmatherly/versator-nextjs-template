@@ -8,10 +8,10 @@ import type { SearchParams } from "~/types";
 import { DataTableSkeleton } from "~/components/data-table/data-table-skeleton";
 import { DateRangePicker } from "~/components/date-range-picker";
 import { OrdersTable } from "~/components/tables/orders-table";
-import { db } from "~/db";
-import { orders, stores, type Order } from "~/db/schema";
 import { env } from "~/env.js";
-import { customerSearchParamsSchema } from "~/lib/validations/params";
+import { db } from "~/server/db";
+import { orders, stores, type Order } from "~/server/db/schema";
+import { customerSearchParamsSchema } from "~/server/validations/params";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

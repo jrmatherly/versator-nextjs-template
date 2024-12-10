@@ -4,8 +4,8 @@ import Link from "next/link";
 import { PlaceholderImage } from "~/components/placeholder-image";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { formatDate } from "~/lib/utils";
 import { type Post } from "~/mdx-components";
+import { formatDate } from "~/server/utils";
 
 type PostCardProps = {
   post: Post;

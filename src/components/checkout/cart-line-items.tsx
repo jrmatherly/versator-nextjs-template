@@ -5,8 +5,8 @@ import { UpdateCart } from "~/components/checkout/update-cart";
 import { Icons } from "~/components/icons";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Separator } from "~/components/ui/separator";
-import { cn, formatPrice } from "~/lib/utils";
-import { type CartLineItemSchema } from "~/lib/validations/cart";
+import { cn, formatPrice } from "~/server/utils";
+import { type CartLineItemSchema } from "~/server/validations/cart";
 
 type CartLineItemsProps = {
   items: CartLineItemSchema[];

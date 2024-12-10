@@ -13,8 +13,8 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Textarea } from "~/components/ui/textarea";
-import { cn } from "~/lib/utils";
-import { type CreateStoreSchema } from "~/lib/validations/store";
+import { cn } from "~/server/utils";
+import { type CreateStoreSchema } from "~/server/validations/store";
 
 type CreateStoreFormProps = {
   children: React.ReactNode;

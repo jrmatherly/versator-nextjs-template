@@ -31,12 +31,12 @@ import {
 import { Slider } from "~/components/ui/slider";
 import { Switch } from "~/components/ui/switch";
 import { queryConfig } from "~/config/query";
-import { type Product } from "~/db/schema";
 import { useDebounce } from "~/hooks/use-debounce";
-import { addToCart, deleteCartItem } from "~/lib/actions/cart";
-import { showErrorToast } from "~/lib/handle-error";
-import { cn } from "~/lib/utils";
-import { type CartItemSchema } from "~/lib/validations/cart";
+import { addToCart, deleteCartItem } from "~/server/actions/cart";
+import { type Product } from "~/server/db/schema";
+import { showErrorToast } from "~/server/handle-error";
+import { cn } from "~/server/utils";
+import { type CartItemSchema } from "~/server/validations/cart";
 
 type BoardBuilderProps = {
   products: Product[];

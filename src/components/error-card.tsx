@@ -7,7 +7,7 @@ import * as React from "react";
 import { ClientButton } from "~/components/client-button";
 import { buttonVariants } from "~/components/ui/button";
 import { Card, CardDescription, CardTitle } from "~/components/ui/card";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type ErrorCardProps = {
   icon?: React.ComponentType<{ className?: string }>;

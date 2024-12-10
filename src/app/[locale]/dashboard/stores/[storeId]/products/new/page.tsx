@@ -10,8 +10,8 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { env } from "~/env.js";
-import { getCategories, getSubcategories } from "~/lib/queries/product";
-import { getCachedUser } from "~/lib/queries/user";
+import { getCategories, getSubcategories } from "~/server/queries/product";
+import { getCachedUser } from "~/server/queries/user";
 
 import { CreateProductForm } from "./_components/create-product-form";
 

@@ -24,7 +24,7 @@ export function ConnectStripe({ storeId }: ConnectStripeProps) {
 
   return (
     <motion.div
-      // className="flex size-full flex-col items-center justify-center"
+      className="flex size-full flex-col items-center justify-center"
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.3, type: "spring" }}
     >
@@ -38,7 +38,7 @@ export function ConnectStripe({ storeId }: ConnectStripeProps) {
         }}
         initial="hidden"
         animate="show"
-        // className="flex flex-col space-y-6 rounded-xl bg-background/60 p-8"
+        className="flex flex-col space-y-6 rounded-xl bg-background/60 p-8"
       >
         <StepHeader
           title="Now let's connect your store to Stripe"
@@ -46,7 +46,7 @@ export function ConnectStripe({ storeId }: ConnectStripeProps) {
         />
         {storeId && (
           <motion.div
-            // className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"
+            className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"
             variants={{
               hidden: { opacity: 0, x: 100 },
               show: {

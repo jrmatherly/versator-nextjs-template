@@ -2,9 +2,9 @@ import { Suspense } from "react";
 
 import { Lobby } from "~/components/lobby";
 import { LobbySkeleton } from "~/components/lobby-skeleton";
-import { getGithubStars } from "~/lib/queries/github";
-import { getCategories, getFeaturedProducts } from "~/lib/queries/product";
-import { getFeaturedStores } from "~/lib/queries/store";
+import { getGithubStars } from "~/server/queries/github";
+import { getCategories, getFeaturedProducts } from "~/server/queries/product";
+import { getFeaturedStores } from "~/server/queries/store";
 
 export default function HomePage() {
   /**

@@ -16,7 +16,7 @@ import {
   navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
 import { siteConfig } from "~/config/site";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type MainNavProps = {
   items?: MainNavItem[];

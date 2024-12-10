@@ -6,14 +6,20 @@ import { revalidateTag } from "next/cache";
 import { headers } from "next/headers";
 import { z } from "zod";
 
-import { db } from "~/db";
-import { addresses, carts, orders, payments, products } from "~/db/schema";
 import { env } from "~/env.js";
-import { stripe } from "~/lib/stripe";
+import { db } from "~/server/db";
+import {
+  addresses,
+  carts,
+  orders,
+  payments,
+  products,
+} from "~/server/db/schema";
+import { stripe } from "~/server/stripe";
 import {
   checkoutItemSchema,
   type CheckoutItemSchema,
-} from "~/lib/validations/cart";
+} from "~/server/validations/cart";
 
 export async function POST(req: Request) {
   const body = await req.text();

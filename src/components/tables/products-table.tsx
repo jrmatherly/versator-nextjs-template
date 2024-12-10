@@ -19,12 +19,12 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { type Product } from "~/db/schema";
 import { useDataTable } from "~/hooks/use-data-table";
-import { deleteProduct } from "~/lib/actions/product";
-import { getErrorMessage } from "~/lib/handle-error";
-import { type getCategories } from "~/lib/queries/product";
-import { formatDate, formatPrice } from "~/lib/utils";
+import { deleteProduct } from "~/server/actions/product";
+import { type Product } from "~/server/db/schema";
+import { getErrorMessage } from "~/server/handle-error";
+import { type getCategories } from "~/server/queries/product";
+import { formatDate, formatPrice } from "~/server/utils";
 
 type AwaitedProduct = Pick<
   Product,

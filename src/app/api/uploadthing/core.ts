@@ -1,9 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
-import { ipAddress } from "@vercel/functions";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
-
-import { ratelimit } from "~/lib/rate-limit";
 
 const f = createUploadthing();
 
@@ -14,15 +11,6 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
-
-      // Rate limit the upload
-      const ip = ipAddress(req) ?? "127.0.0.1";
-      const { success } = await ratelimit.limit(ip);
-
-      if (!success) {
-        throw new UploadThingError("Rate limit exceeded");
-      }
-
       const user = await currentUser();
 
       // If you throw, the user will not be able to upload

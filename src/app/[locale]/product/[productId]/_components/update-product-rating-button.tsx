@@ -6,9 +6,9 @@ import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button, type ButtonProps } from "~/components/ui/button";
-import { updateProductRating } from "~/lib/actions/product";
-import { showErrorToast } from "~/lib/handle-error";
-import { cn } from "~/lib/utils";
+import { updateProductRating } from "~/server/actions/product";
+import { showErrorToast } from "~/server/handle-error";
+import { cn } from "~/server/utils";
 
 type UpdateProductRatingButtonProps = {
   productId: string;

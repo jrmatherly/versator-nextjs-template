@@ -14,8 +14,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "~/components/ui/tooltip";
-import { type getStoresByUserId } from "~/lib/queries/store";
-import { cn } from "~/lib/utils";
+import { type getStoresByUserId } from "~/server/queries/store";
+import { cn } from "~/server/utils";
 
 type Store = Awaited<ReturnType<typeof getStoresByUserId>>[number];
 

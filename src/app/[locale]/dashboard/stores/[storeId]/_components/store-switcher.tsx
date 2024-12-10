@@ -7,6 +7,7 @@ import {
   FrameIcon,
   PlusCircledIcon,
 } from "@radix-ui/react-icons";
+import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import * as React from "react";
 
@@ -27,9 +28,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ui/popover";
-import { type getStoresByUserId } from "~/lib/queries/store";
-import { type getUserPlanMetrics } from "~/lib/queries/user";
-import { cn } from "~/lib/utils";
+import { type getStoresByUserId } from "~/server/queries/store";
+import { type getUserPlanMetrics } from "~/server/queries/user";
+import { cn } from "~/server/utils";
 
 import { CreateStoreDialog } from "./create-store-dialog";
 import { updateCurrentStore } from "./storeSwitcherActions";
@@ -76,9 +77,13 @@ export function StoreSwitcher({
       <Dialog open={showRateLimitDialog} onOpenChange={setShowRateLimitDialog}>
         <DialogContent className="gap-0">
           <DialogHeader className="text-left">
-            <DialogTitle>Rate limit exceeded</DialogTitle>
+            <DialogTitle>Store limit exceeded</DialogTitle>
           </DialogHeader>
-          <RateLimitAlert planMetrics={planMetrics} />
+          {/* TODO: fix Stripe's error show in the toast */}
+          {/* <RateLimitAlert planMetrics={planMetrics} /> */}{" "}
+          <Link href="/dashboard/billing" className="mt-4">
+            <Button>Upgrade</Button>
+          </Link>
         </DialogContent>
       </Dialog>
       <Popover open={open} onOpenChange={setOpen}>

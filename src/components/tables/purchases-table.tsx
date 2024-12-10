@@ -18,13 +18,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { type Order } from "~/db/schema";
 import {
   getStripePaymentStatusColor,
   stripePaymentStatuses,
-} from "~/lib/checkout";
-import { cn, formatDate, formatId, formatPrice } from "~/lib/utils";
-import { checkoutItemSchema } from "~/lib/validations/cart";
+} from "~/server/checkout";
+import { type Order } from "~/server/db/schema";
+import { cn, formatDate, formatId, formatPrice } from "~/server/utils";
+import { checkoutItemSchema } from "~/server/validations/cart";
 
 export type AwaitedOrder = Pick<
   Order,

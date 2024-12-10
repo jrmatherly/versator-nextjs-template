@@ -2,7 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 import { buttonVariants } from "~/components/ui/button";
-import { cn, truncate } from "~/lib/utils";
+import { cn, truncate } from "~/server/utils";
 
 type MdxPagerItem = {
   title: string;

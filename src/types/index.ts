@@ -5,7 +5,7 @@ import { type ClientUploadedFileData } from "uploadthing/types";
 
 import type { Icons } from "~/components/icons";
 
-import { type Store } from "~/db/schema";
+import { type Store } from "~/server/db/schema";
 
 export type NavItem = {
   title: string;

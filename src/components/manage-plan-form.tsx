@@ -6,8 +6,8 @@ import { type z } from "zod";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { managePlan } from "~/lib/actions/stripe";
-import { type managePlanSchema } from "~/lib/validations/stripe";
+import { managePlan } from "~/server/actions/stripe";
+import { type managePlanSchema } from "~/server/validations/stripe";
 
 type ManagePlanFormProps = z.infer<typeof managePlanSchema>;
 

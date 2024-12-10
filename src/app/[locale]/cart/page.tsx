@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { env } from "~/env.js";
-import { getUniqueStoreIds } from "~/lib/actions/cart";
+import { getUniqueStoreIds } from "~/server/actions/cart";
 
 import { CartSheet } from "./client";
 

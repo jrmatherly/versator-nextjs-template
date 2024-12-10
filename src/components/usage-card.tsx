@@ -14,7 +14,7 @@ import {
   HoverCardTrigger,
 } from "~/components/ui/hover-card";
 import { Progress } from "~/components/ui/progress";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type UsageCardProps = {
   title: string;

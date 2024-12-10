@@ -7,7 +7,7 @@ import {
   type IntersectionObserverProps,
 } from "react-intersection-observer";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export const MotionDiv = motion.div;
 export const MotionSection = motion.section;

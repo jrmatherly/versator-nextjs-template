@@ -12,7 +12,7 @@ import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { absoluteUrl, cn } from "~/lib/utils";
+import { absoluteUrl, cn } from "~/server/utils";
 
 // See the stripe playemnts docs: https://stripe.com/docs/payments/quickstart
 

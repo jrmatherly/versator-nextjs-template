@@ -24,17 +24,17 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "~/components/ui/pagination";
-import { db } from "~/db";
-import { stores } from "~/db/schema";
 import { env } from "~/env.js";
 import {
   getCustomers,
   getOrderCount,
   getSaleCount,
   getSales,
-} from "~/lib/actions/order";
-import { cn, formatNumber, formatPrice } from "~/lib/utils";
-import { searchParamsSchema } from "~/lib/validations/params";
+} from "~/server/actions/order";
+import { db } from "~/server/db";
+import { stores } from "~/server/db/schema";
+import { cn, formatNumber, formatPrice } from "~/server/utils";
+import { searchParamsSchema } from "~/server/validations/params";
 
 import { OverviewCard } from "./_components/overview-card";
 import { SalesChart } from "./_components/sales-chart";

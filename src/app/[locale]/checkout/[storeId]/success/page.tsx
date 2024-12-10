@@ -11,12 +11,12 @@ import {
   PageHeaderHeading,
 } from "~/components/page-header";
 import { buttonVariants } from "~/components/ui/button";
-import { db } from "~/db";
-import { stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { getOrderLineItems } from "~/lib/actions/order";
-import { getPaymentIntent } from "~/lib/actions/stripe";
-import { cn, formatPrice } from "~/lib/utils";
+import { getOrderLineItems } from "~/server/actions/order";
+import { getPaymentIntent } from "~/server/actions/stripe";
+import { db } from "~/server/db";
+import { stores } from "~/server/db/schema";
+import { cn, formatPrice } from "~/server/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

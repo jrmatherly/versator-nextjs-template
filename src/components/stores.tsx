@@ -17,8 +17,8 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { queryConfig } from "~/config/query";
-import { type getStores } from "~/lib/queries/store";
-import { cn } from "~/lib/utils";
+import { type getStores } from "~/server/queries/store";
+import { cn } from "~/server/utils";
 
 type StoresProps = Awaited<ReturnType<typeof getStores>>;
 

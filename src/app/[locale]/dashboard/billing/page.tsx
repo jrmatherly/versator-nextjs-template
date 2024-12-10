@@ -13,8 +13,8 @@ import {
 import { Shell } from "~/components/shell";
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { env } from "~/env.js";
-import { getPlan, getPlans } from "~/lib/actions/stripe";
-import { getCachedUser, getUserUsageMetrics } from "~/lib/queries/user";
+import { getPlan, getPlans } from "~/server/actions/stripe";
+import { getCachedUser, getUserUsageMetrics } from "~/server/queries/user";
 
 import { Billing } from "./_components/billing";
 import { BillingSkeleton } from "./_components/billing-skeleton";

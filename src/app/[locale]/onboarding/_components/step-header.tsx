@@ -16,7 +16,7 @@ export function StepHeader({ title, description }: StepHeaderProps) {
           transition: { duration: 0.4, type: "spring" },
         },
       }}
-      // className="w-full space-y-1.5"
+      className="w-full space-y-1.5"
     >
       <h1 className="text-pretty text-2xl font-bold transition-colors sm:text-3xl">
         {title}

@@ -4,7 +4,7 @@ import { Shell } from "~/components/shell";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Separator } from "~/components/ui/separator";
 import { Skeleton } from "~/components/ui/skeleton";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export default function ProductLoading() {
   return (

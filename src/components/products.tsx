@@ -39,13 +39,13 @@ import {
 import { Slider } from "~/components/ui/slider";
 import { Switch } from "~/components/ui/switch";
 import { queryConfig } from "~/config/query";
-import { type Product, type Store } from "~/db/schema";
 import { useDebounce } from "~/hooks/use-debounce";
+import { type Product, type Store } from "~/server/db/schema";
 import {
   type getCategories,
   type getSubcategoriesByCategory,
-} from "~/lib/queries/product";
-import { cn, toTitleCase, truncate } from "~/lib/utils";
+} from "~/server/queries/product";
+import { cn, toTitleCase, truncate } from "~/server/utils";
 
 type ProductsProps = {
   products: Product[];

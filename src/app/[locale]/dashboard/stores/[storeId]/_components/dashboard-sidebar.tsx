@@ -8,7 +8,7 @@ import { Icons } from "~/components/icons";
 import { SidebarNav } from "~/components/layouts/sidebar-nav";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { siteConfig } from "~/config/site";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 import { type SidebarNavItem } from "~/types";
 
 type DashboardSidebarProps = {

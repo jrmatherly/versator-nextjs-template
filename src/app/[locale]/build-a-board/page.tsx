@@ -12,10 +12,10 @@ import {
 } from "~/components/page-header";
 import { Shell } from "~/components/shell";
 import { env } from "~/env.js";
-import { getCartItems } from "~/lib/actions/cart";
-import { getProducts } from "~/lib/queries/product";
-import { cn } from "~/lib/utils";
-import { productsSearchParamsSchema } from "~/lib/validations/params";
+import { getCartItems } from "~/server/actions/cart";
+import { getProducts } from "~/server/queries/product";
+import { cn } from "~/server/utils";
+import { productsSearchParamsSchema } from "~/server/validations/params";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

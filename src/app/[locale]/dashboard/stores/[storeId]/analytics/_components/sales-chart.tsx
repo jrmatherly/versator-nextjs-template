@@ -2,7 +2,7 @@
 
 import { LineChart, type LineChartProps } from "@tremor/react";
 
-import { cn, formatPrice } from "~/lib/utils";
+import { cn, formatPrice } from "~/server/utils";
 
 type SalesChartProps = {
   data: {

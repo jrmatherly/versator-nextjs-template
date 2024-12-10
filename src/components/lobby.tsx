@@ -1,7 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-import type { getCategories, getFeaturedProducts } from "~/lib/queries/product";
+import type {
+  getCategories,
+  getFeaturedProducts,
+} from "~/server/queries/product";
 
 import { ContentSection } from "~/components/content-section";
 import { Icons } from "~/components/icons";
@@ -17,9 +20,9 @@ import { StoreCard } from "~/components/store-card";
 import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
 import { siteConfig } from "~/config/site";
-import { type getGithubStars } from "~/lib/queries/github";
-import { type getFeaturedStores } from "~/lib/queries/store";
-import { cn } from "~/lib/utils";
+import { type getGithubStars } from "~/server/queries/github";
+import { type getFeaturedStores } from "~/server/queries/store";
+import { cn } from "~/server/utils";
 
 import { CategoryCard } from "./category-card";
 
@@ -85,8 +88,8 @@ export async function Lobby({
           className="max-w-[46.875rem] animate-fade-up"
           style={{ animationDelay: "0.30s", animationFillMode: "both" }}
         >
-          Relivator Enhances your eCommerce with the Power of Next.js 15, React,
-          Tailwind, and more
+          Relivator Enhances your eCommerce with the Power of Next.js 15, React
+          19, Tailwind, and more
         </PageHeaderDescription>
         <PageActions
           className="animate-fade-up"

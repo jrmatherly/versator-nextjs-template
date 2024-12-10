@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { Icons } from "~/components/icons";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { Skeleton } from "~/components/ui/skeleton";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type PlaceholderImageProps = {
   isSkeleton?: boolean;

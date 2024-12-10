@@ -13,7 +13,7 @@ import { Skeleton } from "~/components/ui/skeleton";
 import {
   getProductCountByCategory,
   type getCategories,
-} from "~/lib/queries/product";
+} from "~/server/queries/product";
 
 type CategoryCardProps = {
   category: Awaited<ReturnType<typeof getCategories>>[number];

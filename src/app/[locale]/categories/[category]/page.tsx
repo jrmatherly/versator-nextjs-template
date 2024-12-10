@@ -10,8 +10,8 @@ import {
 } from "~/components/page-header";
 import { Shell } from "~/components/shell";
 import { env } from "~/env.js";
-import { getProducts } from "~/lib/queries/product";
-import { toTitleCase } from "~/lib/utils";
+import { getProducts } from "~/server/queries/product";
+import { toTitleCase } from "~/server/utils";
 
 type CategoryPageProps = {
   params: Promise<{ category: string }>;

@@ -18,12 +18,12 @@ import {
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import { db } from "~/db";
-import { stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { updateStore } from "~/lib/actions/store";
-import { getStripeAccount } from "~/lib/actions/stripe";
-import { cn, formatDate } from "~/lib/utils";
+import { updateStore } from "~/server/actions/store";
+import { getStripeAccount } from "~/server/actions/stripe";
+import { db } from "~/server/db";
+import { stores } from "~/server/db/schema";
+import { cn, formatDate } from "~/server/utils";
 
 type DashboardStorePageProps = {
   params: Promise<{

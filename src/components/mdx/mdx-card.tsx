@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type CardProps = {
   href?: string;

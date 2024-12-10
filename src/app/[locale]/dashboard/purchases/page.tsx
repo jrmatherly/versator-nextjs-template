@@ -14,12 +14,12 @@ import {
 } from "~/components/page-header";
 import { Shell } from "~/components/shell";
 import { PurchasesTable } from "~/components/tables/purchases-table";
-import { db } from "~/db";
-import { orders, stores, type Order } from "~/db/schema";
 import { env } from "~/env.js";
-import { getCachedUser } from "~/lib/queries/user";
-import { getUserEmail } from "~/lib/utils";
-import { purchasesSearchParamsSchema } from "~/lib/validations/params";
+import { db } from "~/server/db";
+import { orders, stores, type Order } from "~/server/db/schema";
+import { getCachedUser } from "~/server/queries/user";
+import { getUserEmail } from "~/server/utils";
+import { purchasesSearchParamsSchema } from "~/server/validations/params";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

@@ -14,7 +14,7 @@ import {
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { useMediaQuery } from "~/hooks/use-media-query";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export type DashboardSidebarSheetProps = {} & React.ComponentPropsWithRef<
   typeof SheetTrigger

@@ -8,7 +8,7 @@ import { MdxImage } from "~/components/mdx/mdx-image";
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { ScrollArea } from "~/components/ui/scroll-area";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 // export function useMDXComponents(components: MDXComponents): MDXComponents {
 //   return components;

@@ -17,12 +17,12 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Switch } from "~/components/ui/switch";
-import { updateNotification } from "~/lib/actions/notification";
-import { type getNotification } from "~/lib/queries/notification";
+import { updateNotification } from "~/server/actions/notification";
+import { type getNotification } from "~/server/queries/notification";
 import {
   updateNotificationSchema,
   type UpdateNotificationSchema,
-} from "~/lib/validations/notification";
+} from "~/server/validations/notification";
 
 type UpdateNotificationFormProps = {
   notificationPromise: ReturnType<typeof getNotification>;

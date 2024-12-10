@@ -11,7 +11,7 @@ import {
 } from "~/components/ui/button";
 import { Skeleton } from "~/components/ui/skeleton";
 import { useMounted } from "~/hooks/use-mounted";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type LoadingButtonProps = {
   action: string;

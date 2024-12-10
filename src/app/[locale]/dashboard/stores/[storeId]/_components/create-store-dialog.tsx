@@ -36,12 +36,12 @@ import {
   HoverCardTrigger,
 } from "~/components/ui/hover-card";
 import { useMediaQuery } from "~/hooks/use-media-query";
-import { createStore } from "~/lib/actions/store";
-import { type getUserPlanMetrics } from "~/lib/queries/user";
+import { createStore } from "~/server/actions/store";
+import { type getUserPlanMetrics } from "~/server/queries/user";
 import {
   createStoreSchema,
   type CreateStoreSchema,
-} from "~/lib/validations/store";
+} from "~/server/validations/store";
 
 import { CreateStoreForm } from "./create-store-form";
 

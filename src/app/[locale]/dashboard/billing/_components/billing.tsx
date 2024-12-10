@@ -15,9 +15,9 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { UsageCard } from "~/components/usage-card";
-import { type getUserUsageMetrics } from "~/lib/queries/user";
-import { getPlanLimits } from "~/lib/subscription";
-import { cn, formatDate } from "~/lib/utils";
+import { type getUserUsageMetrics } from "~/server/queries/user";
+import { getPlanLimits } from "~/server/subscription";
+import { cn, formatDate } from "~/server/utils";
 
 type BillingProps = {
   planPromise: Promise<UserPlan | null>;

@@ -13,12 +13,12 @@ import { Button, buttonVariants } from "~/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "~/components/ui/drawer";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Separator } from "~/components/ui/separator";
-import { db } from "~/db";
-import { stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { getCart } from "~/lib/actions/cart";
-import { createPaymentIntent, getStripeAccount } from "~/lib/actions/stripe";
-import { cn, formatPrice } from "~/lib/utils";
+import { getCart } from "~/server/actions/cart";
+import { createPaymentIntent, getStripeAccount } from "~/server/actions/stripe";
+import { db } from "~/server/db";
+import { stores } from "~/server/db/schema";
+import { cn, formatPrice } from "~/server/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

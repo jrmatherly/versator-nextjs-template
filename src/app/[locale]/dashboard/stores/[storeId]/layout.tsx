@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import * as React from "react";
 
-import { getCachedUser } from "~/lib/queries/user";
+import { getCachedUser } from "~/server/queries/user";
 
 type DashboardStoreLayoutProps = {
   params: Promise<{

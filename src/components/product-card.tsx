@@ -18,9 +18,9 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import { type Product } from "~/db/schema";
-import { addToCart } from "~/lib/actions/cart";
-import { cn, formatPrice } from "~/lib/utils";
+import { addToCart } from "~/server/actions/cart";
+import { type Product } from "~/server/db/schema";
+import { cn, formatPrice } from "~/server/utils";
 
 type ProductCardProps = {
   product: Pick<Product, "id" | "name" | "price" | "images" | "inventory"> & {

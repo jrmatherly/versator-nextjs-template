@@ -5,8 +5,8 @@ import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button, type ButtonProps } from "~/components/ui/button";
-import { createAccountLink } from "~/lib/actions/stripe";
-import { cn } from "~/lib/utils";
+import { createAccountLink } from "~/server/actions/stripe";
+import { cn } from "~/server/utils";
 
 type ConnectToStripeButtonProps = {
   storeId: string;

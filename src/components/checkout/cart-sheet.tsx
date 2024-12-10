@@ -14,8 +14,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet";
-import { getCart } from "~/lib/actions/cart";
-import { cn, formatPrice } from "~/lib/utils";
+import { getCart } from "~/server/actions/cart";
+import { cn, formatPrice } from "~/server/utils";
 
 export async function CartSheet() {
   const cartLineItems = await getCart();

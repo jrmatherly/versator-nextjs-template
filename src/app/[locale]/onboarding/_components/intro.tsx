@@ -12,7 +12,7 @@ export function Intro() {
 
   return (
     <motion.div
-      // className="flex size-full flex-col items-center justify-center"
+      className="flex size-full flex-col items-center justify-center"
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.3, type: "spring" }}
     >
@@ -27,10 +27,10 @@ export function Intro() {
           }}
           initial="hidden"
           animate="show"
-          // className="mx-5 flex flex-col items-center space-y-2.5 text-center sm:mx-auto"
+          className="mx-5 flex flex-col items-center space-y-2.5 text-center sm:mx-auto"
         >
           <motion.h1
-            // className="text-balance text-4xl font-bold transition-colors sm:text-5xl"
+            className="text-balance text-4xl font-bold transition-colors sm:text-5xl"
             variants={{
               hidden: { opacity: 0, y: 50 },
               show: {
@@ -43,7 +43,7 @@ export function Intro() {
             Welcome to Relivator
           </motion.h1>
           <motion.p
-            // className="max-w-md text-muted-foreground transition-colors sm:text-lg"
+            className="max-w-md text-muted-foreground transition-colors sm:text-lg"
             variants={{
               hidden: { opacity: 0, y: 50 },
               show: {
@@ -57,7 +57,7 @@ export function Intro() {
             selling your products online.
           </motion.p>
           <motion.div
-            // className="pt-4"
+            className="pt-4"
             variants={{
               hidden: { opacity: 0, y: 50 },
               show: {

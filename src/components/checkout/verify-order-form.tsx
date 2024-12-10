@@ -18,8 +18,8 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { cn } from "~/lib/utils";
-import { verifyOrderSchema } from "~/lib/validations/order";
+import { cn } from "~/server/utils";
+import { verifyOrderSchema } from "~/server/validations/order";
 
 type VerifyOderFormProps = {} & React.ComponentPropsWithoutRef<"form">;
 type Inputs = z.infer<typeof verifyOrderSchema>;

@@ -5,9 +5,9 @@ import * as React from "react";
 
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { deleteCartItem, updateCartItem } from "~/lib/actions/cart";
-import { showErrorToast } from "~/lib/handle-error";
-import { type CartLineItemSchema } from "~/lib/validations/cart";
+import { deleteCartItem, updateCartItem } from "~/server/actions/cart";
+import { showErrorToast } from "~/server/handle-error";
+import { type CartLineItemSchema } from "~/server/validations/cart";
 
 type UpdateCartProps = {
   cartLineItem: CartLineItemSchema;

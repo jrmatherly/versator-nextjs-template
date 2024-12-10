@@ -10,10 +10,10 @@ import { AlertCard } from "~/components/alert-card";
 import { DataTableSkeleton } from "~/components/data-table/data-table-skeleton";
 import { DateRangePicker } from "~/components/date-range-picker";
 import { CustomersTable } from "~/components/tables/customers-table";
-import { db } from "~/db";
-import { orders, stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { customersSearchParamsSchema } from "~/lib/validations/params";
+import { db } from "~/server/db";
+import { orders, stores } from "~/server/db/schema";
+import { customersSearchParamsSchema } from "~/server/validations/params";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

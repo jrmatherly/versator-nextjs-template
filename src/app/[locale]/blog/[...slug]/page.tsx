@@ -13,8 +13,8 @@ import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { buttonVariants } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { env } from "~/env.js";
-import { absoluteUrl, cn, formatDate } from "~/lib/utils";
 import { allAuthors, allPosts, Mdx } from "~/mdx-components";
+import { absoluteUrl, cn, formatDate } from "~/server/utils";
 
 type PostPageProps = {
   params: {

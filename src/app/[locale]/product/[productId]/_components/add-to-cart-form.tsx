@@ -20,10 +20,10 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { addToCart } from "~/lib/actions/cart";
-import { showErrorToast } from "~/lib/handle-error";
-import { cn } from "~/lib/utils";
-import { updateCartItemSchema } from "~/lib/validations/cart";
+import { addToCart } from "~/server/actions/cart";
+import { showErrorToast } from "~/server/handle-error";
+import { cn } from "~/server/utils";
+import { updateCartItemSchema } from "~/server/validations/cart";
 
 type AddToCartFormProps = {
   productId: string;

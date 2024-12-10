@@ -18,8 +18,11 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { unknownError } from "~/lib/constants";
-import { emailSchema, type EmailSchema } from "~/lib/validations/notification";
+import { unknownError } from "~/server/constants";
+import {
+  emailSchema,
+  type EmailSchema,
+} from "~/server/validations/notification";
 
 export function JoinNewsletterForm() {
   const [loading, setLoading] = React.useState(false);

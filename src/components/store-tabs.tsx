@@ -6,7 +6,7 @@ import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Separator } from "~/components/ui/separator";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type StoreTabsProps = {
   storeId: string;

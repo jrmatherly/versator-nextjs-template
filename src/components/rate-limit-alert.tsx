@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { buttonVariants } from "~/components/ui/button";
-import { type getUserPlanMetrics } from "~/lib/queries/user";
-import { cn } from "~/lib/utils";
+import { type getUserPlanMetrics } from "~/server/queries/user";
+import { cn } from "~/server/utils";
 
 import { ManagePlanForm } from "./manage-plan-form";
 

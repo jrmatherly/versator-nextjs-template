@@ -1,19 +1,21 @@
 import { type Metadata } from "next";
-import * as React from "react";
 
 import { AlertCard } from "~/components/alert-card";
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "~/components/page-header";
 import { Shell } from "~/components/shell";
-import { Separator } from "~/components/ui/separator";
 import { env } from "~/env.js";
-import { allPosts } from "~/mdx-components";
 
-import { PostCard } from "./_components/post-card";
-import { PostCardSkeleton } from "./_components/post-card-skeleton";
+// import * as React from "react";
+
+// import {
+// PageHeader,
+// PageHeaderDescription,
+// PageHeaderHeading,
+// } from "~/components/page-header";
+// import { Separator } from "~/components/ui/separator";
+// import { allPosts } from "~/mdx-components";
+
+// import { PostCard } from "./_components/post-card";
+// import { PostCardSkeleton } from "./_components/post-card-skeleton";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
@@ -21,14 +23,15 @@ export const metadata: Metadata = {
   description: "Explore the latest news and updates from the community",
 };
 
-export default function BlogPage() {
-  const posts = allPosts
-    .filter((post) => post.published)
-    .sort((a, b) => b.date.localeCompare(a.date));
+export default async function BlogPage() {
+  // const posts = allPosts
+  //   .filter((post) => post.published)
+  //   .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <Shell className="md:pb-10 mt-20">
       <AlertCard />
+
       {/* <PageHeader>
         <PageHeaderHeading>Blog</PageHeaderHeading>
         <PageHeaderDescription>

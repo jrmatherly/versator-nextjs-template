@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-import { cn } from "~/lib/utils";
-import { ogImageSchema } from "~/lib/validations/og";
+import { cn } from "~/server/utils";
+import { ogImageSchema } from "~/server/validations/og";
 
 // export const runtime = "edge"; // TODO: ensure api works without it
 

@@ -5,7 +5,7 @@ import {
   CardHeader,
 } from "~/components/ui/card";
 import { Skeleton } from "~/components/ui/skeleton";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export function BillingSkeleton() {
   return (

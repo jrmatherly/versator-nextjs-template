@@ -6,7 +6,7 @@ import { ModeToggle } from "~/components/layouts/mode-toggle";
 import { Shell } from "~/components/shell";
 import { buttonVariants } from "~/components/ui/button";
 import { siteConfig } from "~/config/site";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 export function SiteFooter() {
   return (

@@ -5,8 +5,8 @@ import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button, type ButtonProps } from "~/components/ui/button";
-import { seedProducts } from "~/lib/actions/seed";
-import { cn } from "~/lib/utils";
+import { seedProducts } from "~/server/actions/seed";
+import { cn } from "~/server/utils";
 
 type SeedProductsProps = {
   storeId: string;

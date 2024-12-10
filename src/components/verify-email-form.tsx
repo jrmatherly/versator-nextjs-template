@@ -19,8 +19,8 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { showErrorToast } from "~/lib/handle-error";
-import { verifyEmailSchema } from "~/lib/validations/auth";
+import { showErrorToast } from "~/server/handle-error";
+import { verifyEmailSchema } from "~/server/validations/auth";
 
 type Inputs = z.infer<typeof verifyEmailSchema>;
 

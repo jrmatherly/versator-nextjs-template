@@ -6,7 +6,7 @@ import * as React from "react";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { showErrorToast } from "~/lib/handle-error";
+import { showErrorToast } from "~/server/handle-error";
 
 const oauthProviders = [
   { name: "Google", strategy: "oauth_google", icon: "google" },

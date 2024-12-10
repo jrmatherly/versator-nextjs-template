@@ -16,11 +16,11 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import { db } from "~/db";
-import { orders, stores } from "~/db/schema";
 import { env } from "~/env.js";
-import { getOrderLineItems } from "~/lib/actions/order";
-import { formatId, formatPrice } from "~/lib/utils";
+import { getOrderLineItems } from "~/server/actions/order";
+import { db } from "~/server/db";
+import { orders, stores } from "~/server/db/schema";
+import { formatId, formatPrice } from "~/server/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

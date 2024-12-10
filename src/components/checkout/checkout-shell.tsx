@@ -4,8 +4,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { type StripeElementsOptions } from "@stripe/stripe-js";
 import * as React from "react";
 
-import { getStripe } from "~/lib/get-stripe";
-import { cn } from "~/lib/utils";
+import { getStripe } from "~/server/get-stripe";
+import { cn } from "~/server/utils";
 
 /**
  * See the Stripe documentation for more information:

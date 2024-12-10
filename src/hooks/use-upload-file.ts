@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import type { StoredFile } from "~/types";
 
 import { type OurFileRouter } from "~/app/api/uploadthing/core";
-import { getErrorMessage } from "~/lib/handle-error";
-import { uploadFiles } from "~/lib/uploadthing";
+import { getErrorMessage } from "~/server/handle-error";
+import { uploadFiles } from "~/server/uploadthing";
 
 type UseUploadFileProps = {
   defaultUploadedFiles?: StoredFile[];

@@ -1,6 +1,6 @@
 import { Icons } from "~/components/icons";
 import { Card, CardDescription, CardTitle } from "~/components/ui/card";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type EmptyCardProps = {
   title: string;

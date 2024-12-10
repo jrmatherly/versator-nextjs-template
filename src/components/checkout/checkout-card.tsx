@@ -10,8 +10,8 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
-import { getCart } from "~/lib/actions/cart";
-import { cn, formatPrice } from "~/lib/utils";
+import { getCart } from "~/server/actions/cart";
+import { cn, formatPrice } from "~/server/utils";
 
 type CheckoutCardProps = {
   storeId: string;

@@ -11,7 +11,7 @@ import { DataTableFacetedFilter } from "~/components/data-table/data-table-facet
 import { DataTableViewOptions } from "~/components/data-table/data-table-view-options";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type DataTableToolbarProps<TData> = {
   table: Table<TData>;

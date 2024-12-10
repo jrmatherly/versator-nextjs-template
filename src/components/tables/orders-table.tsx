@@ -17,12 +17,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { type Order } from "~/db/schema";
 import {
   getStripePaymentStatusColor,
   stripePaymentStatuses,
-} from "~/lib/checkout";
-import { cn, formatDate, formatId, formatPrice } from "~/lib/utils";
+} from "~/server/checkout";
+import { type Order } from "~/server/db/schema";
+import { cn, formatDate, formatId, formatPrice } from "~/server/utils";
 
 type AwaitedOrder = Pick<Order, "id" | "quantity" | "amount" | "createdAt"> & {
   customer: string | null;

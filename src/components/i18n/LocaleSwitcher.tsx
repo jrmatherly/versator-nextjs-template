@@ -19,7 +19,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { labels, localeFlags } from "~/i18n/locales";
 import { usePathname, routing } from "~/i18n/routing";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 const TRANSLATED = "⚙️ Translated";
 const NATIVE = "⚙️ Native";

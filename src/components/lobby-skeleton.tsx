@@ -12,7 +12,7 @@ import { Shell } from "~/components/shell";
 import { StoreCardSkeleton } from "~/components/store-card-skeleton";
 import { buttonVariants } from "~/components/ui/button";
 import { Skeleton } from "~/components/ui/skeleton";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 import { CategoryCardSkeleton } from "./category-card-skeleton";
 
@@ -36,8 +36,8 @@ export function LobbySkeleton() {
           className="max-w-[46.875rem] animate-fade-up"
           style={{ animationDelay: "0.30s", animationFillMode: "both" }}
         >
-          Relivator Enhances your eCommerce with the Power of Next.js 15, React,
-          Tailwind, and more
+          Relivator Enhances your eCommerce with the Power of Next.js 15, React
+          19, Tailwind, and more
         </PageHeaderDescription>
         <PageActions
           className="animate-fade-up"

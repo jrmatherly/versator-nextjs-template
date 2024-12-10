@@ -6,7 +6,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 import { cva } from "class-variance-authority";
 
 import { Badge } from "~/components/ui/badge";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 const metricsCardVariants = cva("flex flex-col rounded-lg border px-3 py-2", {
   variants: {

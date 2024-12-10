@@ -1,3 +1,5 @@
+import "~/styles/globals.css";
+
 import type { Metadata, Viewport } from "next";
 
 import { ClerkProvider } from "@clerk/nextjs";
@@ -10,7 +12,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import type { Locale } from "~/i18n/locales";
 
-import { app, META_THEME_COLORS } from "~/app";
+import { app } from "~/app";
 import AppFooter from "~/components/app-footer";
 import AppHeader from "~/components/app-header";
 import { ThemeProvider } from "~/components/providers";
@@ -18,11 +20,8 @@ import { TailwindIndicator } from "~/components/tailwind";
 import { Toaster as SonnerToaster } from "~/components/ui/sonner";
 import { Toaster as ShadcnToaster } from "~/components/ui/toaster";
 import { routing } from "~/i18n/routing";
-import { getCachedUser } from "~/lib/queries/user";
-import "~/styles/globals.css";
+import { getCachedUser } from "~/server/queries/user";
 import { cn } from "~/utils";
-
-// import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const fontSans = GeistSans;
 const fontMono = GeistMono;
@@ -80,16 +79,10 @@ export const metadata: Metadata = {
     images: [app.ogImage],
     creator: "@reliverse_org",
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: `${app.url}/site.webmanifest`,
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export const viewport: Viewport = {
-  //   themeColor: META_THEME_COLORS.light,
   colorScheme: "dark light",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -97,13 +90,11 @@ export const viewport: Viewport = {
   ],
 };
 
-// modal: React.ReactNode;
 type LocaleLayoutProps = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
 
-// modal,
 export default async function LocaleLayout({
   children,
   params,
@@ -145,7 +136,6 @@ export default async function LocaleLayout({
                   <AppHeader user={user} />
                   <main className="flex flex-1 flex-col gap-4 px-2 items-center mt-2">
                     {children}
-                    {/* {modal} */}
                   </main>
                   <AppFooter />
                   <TailwindIndicator />
@@ -155,7 +145,6 @@ export default async function LocaleLayout({
               </div>
             </NuqsAdapter>
           </ThemeProvider>
-          {/* <VercelAnalytics /> */}
         </body>
       </html>
     </ClerkProvider>

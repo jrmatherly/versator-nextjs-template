@@ -38,16 +38,16 @@ import {
 } from "~/components/ui/select";
 import { Textarea } from "~/components/ui/textarea";
 import { useUploadFile } from "~/hooks/use-upload-file";
-import { addProduct } from "~/lib/actions/product";
-import { getErrorMessage } from "~/lib/handle-error";
+import { addProduct } from "~/server/actions/product";
+import { getErrorMessage } from "~/server/handle-error";
 import {
   type getCategories,
   type getSubcategories,
-} from "~/lib/queries/product";
+} from "~/server/queries/product";
 import {
   createProductSchema,
   type CreateProductSchema,
-} from "~/lib/validations/product";
+} from "~/server/validations/product";
 
 type CreateProductFormProps = {
   storeId: string;

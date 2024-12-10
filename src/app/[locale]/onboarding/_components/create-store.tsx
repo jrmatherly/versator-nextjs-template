@@ -9,11 +9,11 @@ import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { createStore } from "~/lib/actions/store";
+import { createStore } from "~/server/actions/store";
 import {
   createStoreSchema,
   type CreateStoreSchema,
-} from "~/lib/validations/store";
+} from "~/server/validations/store";
 
 import { CreateStoreForm } from "../../dashboard/stores/[storeId]/_components/create-store-form";
 import { StepHeader } from "./step-header";
@@ -70,7 +70,7 @@ export function CreateStore({ userId }: CreateStoreProps) {
         }}
         initial="hidden"
         animate="show"
-        // className="flex flex-col space-y-4 rounded-xl bg-background/60 p-8"
+        className="flex flex-col space-y-4 rounded-xl bg-background/60 p-8"
       >
         <StepHeader
           title="Let's start by creating your store"

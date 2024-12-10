@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { getCachedUser } from "~/lib/queries/user";
+import { getCachedUser } from "~/server/queries/user";
 
 export default async function CheckoutLayout({
   children,

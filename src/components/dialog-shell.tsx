@@ -6,7 +6,7 @@ import * as React from "react";
 
 import { Button } from "~/components/ui/button";
 import { useClickOutside } from "~/hooks/use-click-outside";
-import { cn } from "~/lib/utils";
+import { cn } from "~/server/utils";
 
 type DialogShellProps = {} & React.HTMLAttributes<HTMLDivElement>;
 

@@ -19,9 +19,9 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { env } from "~/env.js";
-import { getNotification } from "~/lib/queries/notification";
-import { getCachedUser } from "~/lib/queries/user";
-import { getUserEmail } from "~/lib/utils";
+import { getNotification } from "~/server/queries/notification";
+import { getCachedUser } from "~/server/queries/user";
+import { getUserEmail } from "~/server/utils";
 
 import { UpdateNotificationForm } from "./_components/update-notification-form";
 import { UpdateNotificationFormSkeleton } from "./_components/update-notification-form-skeleton";

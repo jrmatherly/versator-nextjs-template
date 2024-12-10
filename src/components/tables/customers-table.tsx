@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { formatDate, formatPrice } from "~/lib/utils";
+import { formatDate, formatPrice } from "~/server/utils";
 
 type AwaitedCustomer = {
   email: string | null;

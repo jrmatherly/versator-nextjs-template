@@ -3,11 +3,11 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 import NewsletterWelcomeEmail from "~/components/emails/newsletter-welcome-email";
-import { db } from "~/db";
-import { notifications } from "~/db/schema";
 import { env } from "~/env.js";
-import { resend } from "~/lib/resend";
-import { joinNewsletterSchema } from "~/lib/validations/notification";
+import { db } from "~/server/db";
+import { notifications } from "~/server/db/schema";
+import { resend } from "~/server/resend";
+import { joinNewsletterSchema } from "~/server/validations/notification";
 
 export async function POST(req: Request) {
   const input = joinNewsletterSchema.parse(await req.json());

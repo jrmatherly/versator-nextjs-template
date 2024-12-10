@@ -10,7 +10,7 @@ import {
 } from "~/components/page-header";
 import { Shell } from "~/components/shell";
 import { env } from "~/env.js";
-import { getCachedUser } from "~/lib/queries/user";
+import { getCachedUser } from "~/server/queries/user";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),

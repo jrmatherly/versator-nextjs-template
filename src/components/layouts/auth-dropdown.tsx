@@ -19,10 +19,10 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { Skeleton } from "~/components/ui/skeleton";
-import { db } from "~/db";
-import { usersTable } from "~/db/schema";
-import { getStoreByUserId } from "~/lib/queries/store";
-import { cn, getUserEmail } from "~/lib/utils";
+import { db } from "~/server/db";
+import { usersTable } from "~/server/db/schema";
+import { getStoreByUserId } from "~/server/queries/store";
+import { cn, getUserEmail } from "~/server/utils";
 
 type AuthDropdownProps = {
   user: User | null;

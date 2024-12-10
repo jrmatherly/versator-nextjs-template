@@ -2,10 +2,10 @@
 
 import { eq } from "drizzle-orm";
 
-import type { User } from "~/db/schema";
+import type { User } from "~/server/db/schema";
 
-import { db } from "~/db";
-import { usersTable } from "~/db/schema";
+import { db } from "~/server/db";
+import { usersTable } from "~/server/db/schema";
 
 export async function updateCurrentStore(userId: string, storeId: string) {
   try {

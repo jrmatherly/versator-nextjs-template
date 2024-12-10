@@ -17,8 +17,8 @@ import {
 } from "~/components/ui/command";
 import { Skeleton } from "~/components/ui/skeleton";
 import { useDebounce } from "~/hooks/use-debounce";
-import { filterProducts } from "~/lib/actions/product";
-import { cn, isMacOs } from "~/lib/utils";
+import { filterProducts } from "~/server/actions/product";
+import { cn, isMacOs } from "~/server/utils";
 
 type ProductGroup = NonNullable<
   Awaited<ReturnType<typeof filterProducts>>["data"]

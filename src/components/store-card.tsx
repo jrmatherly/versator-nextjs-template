@@ -19,11 +19,11 @@ import { cn } from "~/server/utils";
 
 type Store = Awaited<ReturnType<typeof getStoresByUserId>>[number];
 
-type StoreCardProps = {
+interface StoreCardProps {
   store: Omit<Store, "orderCount" | "customerCount"> &
     Partial<Pick<Store, "orderCount" | "customerCount">>;
   href: string;
-};
+}
 
 export function StoreCard({ store, href }: StoreCardProps) {
   const isUserStore = href.includes("dashboard");
@@ -47,7 +47,7 @@ export function StoreCard({ store, href }: StoreCardProps) {
             </TooltipTrigger>
             <TooltipContent
               align="start"
-              className="w-52 border border-input bg-background text-foreground shadow-sm"
+              className="w-52 border border-input bg-background text-foreground shadow-xs"
             >
               Connect your Stripe account to activate your store
             </TooltipContent>

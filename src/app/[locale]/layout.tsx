@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(app.url),
   description: app.description,
   keywords: [
-    "Reliverse",
+    "Versator",
     "Bleverse",
-    "Relivator",
+    "Versator",
     "Versator",
     "Template",
     "Starter",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
       url: "https://agency.bleverse.com",
     },
     {
-      name: "Reliverse",
-      url: "https://reliverse.org",
+      name: "Versator",
+      url: "https://versator.org",
     },
   ],
   creator: "Bleverse",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: app.name,
     description: app.description,
     images: [app.ogImage],
-    creator: "@reliverse_org",
+    creator: "@versator_org",
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -90,10 +90,10 @@ export const viewport: Viewport = {
   ],
 };
 
-type LocaleLayoutProps = {
+interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-};
+}
 
 export default async function LocaleLayout({
   children,

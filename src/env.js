@@ -1,11 +1,9 @@
 // @ts-check
 
 import { createEnv } from "@t3-oss/env-nextjs";
-import { vercel } from "@t3-oss/env-nextjs/presets";
 import { z } from "zod";
 
 export const env = createEnv({
-  extends: [vercel()],
   /**
    * Specify your server-side environment variables schema here.
    * This way you can ensure the app isn't built with invalid env vars.
@@ -14,6 +12,7 @@ export const env = createEnv({
     // REQUIRED
     DATABASE_URL: z.string().url(),
     CLERK_SECRET_KEY: z.string().min(1),
+    CLERK_ENCRYPTION_KEY: z.string().min(1),
     STRIPE_API_KEY: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
     STRIPE_PRO_MONTHLY_PRICE_ID: z.string().min(1),
@@ -54,6 +53,7 @@ export const env = createEnv({
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
     CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+    CLERK_ENCRYPTION_KEY: process.env.CLERK_ENCRYPTION_KEY,
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     STRIPE_API_KEY: process.env.STRIPE_API_KEY,

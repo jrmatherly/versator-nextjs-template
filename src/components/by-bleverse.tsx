@@ -37,7 +37,7 @@ export function ByBleverseSheet() {
                       Products
                     </span>
                   </div>
-                  <SheetClose className="right-4 top-2 p-1 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+                  <SheetClose className="right-4 top-2 p-1 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
                     <kbd className="inline-flex select-none items-center gap-1 rounded border bg-background px-2 py-1 font-mono font-medium opacity-100">
                       <span className="text-xs">ESC</span>
                       <span className="sr-only">Close</span>
@@ -49,12 +49,10 @@ export function ByBleverseSheet() {
             <Separator />
 
             <div>
-              <h3 className="mb-4 text-sm font-semibold">
-                ✨ Reliverse Spaces
-              </h3>
+              <h3 className="mb-4 text-sm font-semibold">✨ Versator Spaces</h3>
               <div className="space-y-4">
                 <Link
-                  href="https://docs.reliverse.org"
+                  href="https://docs.versator.org"
                   className="sheet-link"
                   target="_blank"
                 >
@@ -84,7 +82,7 @@ export function ByBleverseSheet() {
               <h3 className="mb-4 text-sm font-semibold">🧿 Nazar Kornienko</h3>
               <div className="space-y-4">
                 <Link
-                  href="https://blefnk.reliverse.org"
+                  href="https://blefnk.versator.org"
                   className="sheet-link"
                   target="_blank"
                 >

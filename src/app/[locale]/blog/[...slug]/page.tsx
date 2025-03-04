@@ -1,8 +1,7 @@
+// import "~/styles/mdx.css";
+
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import { type Metadata } from "next";
-
-import "~/styles/mdx.css";
-
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,11 +15,11 @@ import { env } from "~/env.js";
 import { allAuthors, allPosts, Mdx } from "~/mdx-components";
 import { absoluteUrl, cn, formatDate } from "~/server/utils";
 
-type PostPageProps = {
+interface PostPageProps {
   params: {
     slug: string[];
   };
-};
+}
 
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params.slug.join("/");
@@ -42,13 +41,6 @@ export async function generateMetadata({
     return {};
   }
 
-  const url = env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-
-  const ogUrl = new URL(`${url}/api/og`);
-  ogUrl.searchParams.set("title", post.title);
-  ogUrl.searchParams.set("type", "Blog Post");
-  ogUrl.searchParams.set("mode", "dark");
-
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
     title: post.title,
@@ -61,20 +53,11 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       url: absoluteUrl(post.slug),
-      images: [
-        {
-          url: ogUrl.toString(),
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [ogUrl.toString()],
     },
   };
 }

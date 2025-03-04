@@ -46,7 +46,7 @@
     "email": "E-mail"
   },
   "JoinNewsletterForm": {
-    "joinReliverseWeeklyNewsletter": "Dołącz do cotygodniowego biuletynu Reliverse",
+    "joinVersatorWeeklyNewsletter": "Dołącz do cotygodniowego biuletynu Versator",
     "tryAgain": "Spróbuj ponownie"
   },
   "LocaleSwitcher": {
@@ -67,7 +67,7 @@
     "websiteLogoWithName": "Logo strony internetowej z nazwą"
   },
   "Manifest": {
-    "name": "Relivator: Szablon Next.js"
+    "name": "Versator: Szablon Next.js"
   },
   "MdxCard": {
     "view": "Pogląd"
@@ -85,13 +85,13 @@
     "navwithcompactpageheader": "NavWithCompactPageNagłówek"
   },
   "NewsletterWelcomeEmail": {
-    "reliverseWeeklyNewsletter": "Cotygodniowy biuletyn Reliverse"
+    "versatorWeeklyNewsletter": "Cotygodniowy biuletyn Versator"
   },
   "Options": {
     "toggleColumns": "Przełącz kolumny"
   },
   "PathnamesPage": {
-    "description": "<p>Reliverse Playground | next-intl | Nazwy ścieżek URL można umiędzynarodowić.</p><p>Jeśli używasz języka domyślnego, angielskiego, w pasku adresu przeglądarki na tej stronie zobaczysz <code>/en/pathnames</code>.< /p><p>Jeśli zmienisz ustawienia regionalne na niemieckie, adres URL zostanie odpowiednio zlokalizowany (<code>/de/pfadnamen</code>).</p>",
+    "description": "<p>Versator Playground | next-intl | Nazwy ścieżek URL można umiędzynarodowić.</p><p>Jeśli używasz języka domyślnego, angielskiego, w pasku adresu przeglądarki na tej stronie zobaczysz <code>/en/pathnames</code>.< /p><p>Jeśli zmienisz ustawienia regionalne na niemieckie, adres URL zostanie odpowiednio zlokalizowany (<code>/de/pfadnamen</code>).</p>",
     "title": "Nazwy ścieżek"
   },
   "PostAddForm": {
@@ -141,7 +141,7 @@
   },
   "RootLocaleLayout": {
     "metadata": {
-      "description": "Ulepsz swój eCommerce z Relivator: Moc shadcn/ui, Next.js 15 i React 19",
+      "description": "Ulepsz swój eCommerce z Versator: Moc shadcn/ui, Next.js 15 i React 19",
       "title": {
         "home": "Główna"
       }
@@ -252,7 +252,7 @@
       "button": "Odwiedź teraz",
       "details": "Odwiedź post na blogu, aby zobaczyć, co się zmieniło i co będzie dalej.",
       "dismiss": "Odrzucać",
-      "title": "Relivator v1.2.6 i v1.3.0-canary.7 są już TUTAJ!"
+      "title": "Versator v1.2.6 i v1.3.0-canary.7 są już TUTAJ!"
     }
   },
   "blog-comments-server": {
@@ -328,16 +328,16 @@
   },
   "faq": {
     "1": {
-      "details": "Sprawdź README.md w repozytorium GitHub Relivator, aby uzyskać najnowsze informacje i instrukcje instalacji.",
+      "details": "Sprawdź README.md w repozytorium GitHub Versator, aby uzyskać najnowsze informacje i instrukcje instalacji.",
       "summary": "Jak mogę szybko zainstalować i zacząć?"
     },
     "2": {
-      "details": "Relivator oferuje nieograniczone możliwości z gotowymi narzędziami.",
-      "summary": "Dlaczego wybrać Relivator dla Next.js 15 i React 19?"
+      "details": "Versator oferuje nieograniczone możliwości z gotowymi narzędziami.",
+      "summary": "Dlaczego wybrać Versator dla Next.js 15 i React 19?"
     },
     "3": {
       "details": "Rozwój to głównie praca jednej osoby. Darowizny mogą przyspieszyć proces. Kliknij poniżej, aby wesprzeć. Dziękujemy za wsparcie! 🩷",
-      "summary": "Czy można przyspieszyć wydanie Relivator v1.3.0?"
+      "summary": "Czy można przyspieszyć wydanie Versator v1.3.0?"
     }
   },
   "file-dialog": {
@@ -360,7 +360,7 @@
         "title": "Integracja Bazy Danych: Solidna i Wszechstronna"
       },
       "devtools": {
-        "ambitions-description": "Relivator oferuje nieograniczone możliwości z gotowymi narzędziami.",
+        "ambitions-description": "Versator oferuje nieograniczone możliwości z gotowymi narzędziami.",
         "description": "Solidny system subskrypcji z darmowymi i płatnymi planami. Szczegóły w README.md.",
         "title": "Subskrypcje Stripe: Potężne i Elastyczne"
       },
@@ -395,7 +395,7 @@
     "thankYouForTheOrder": "Dziękuję za zamówienie"
   },
   "metadata": {
-    "description": "Ulepsz swój eCommerce z Relivator: Moc shadcn/ui, Next.js 15 i React 19",
+    "description": "Ulepsz swój eCommerce z Versator: Moc shadcn/ui, Next.js 15 i React 19",
     "title": {
       "home": "Główna"
     }
@@ -406,7 +406,7 @@
     "system": "System",
     "toggleTheme": "Przełącz motyw"
   },
-  "name": "Relivator: Next.js Szablon",
+  "name": "Versator: Next.js Szablon",
   "onboard": {
     "asa": "asa",
     "dateEventDateTbd": "Data: [Data wydarzenia (do ustalenia)]",
@@ -414,7 +414,7 @@
     "eventDetails": "Szczegóły wydarzenia:",
     "join15MinutesEarlyToNetwork": "🌟 Dołącz 15 minut wcześniej, aby nawiązać kontakty! 🌟",
     "locationEventLinkTbd": "Lokalizacja: [Link do wydarzenia (do ustalenia)]",
-    "relivatorNextJsRedefined": "🚀 Relivator — nowa definicja Next.js:",
+    "versatorNextJsRedefined": "🚀 Versator — nowa definicja Next.js:",
     "tbdToBeDetermined": "*Do ustalenia – do ustalenia",
     "timeEventTimeTbd": "Czas: [Czas wydarzenia (do ustalenia)]"
   },
@@ -462,7 +462,7 @@
     "purchasesTable": "Tabela zakupów",
     "readyToBuildYourEcommercePlatform": "Gotowy do zbudowania platformy eCommerce?",
     "recurringAndOneTimeDonations": "Darowizny cykliczne i jednorazowe",
-    "reliversePlayground": "Odśwież plac zabaw",
+    "versatorPlayground": "Odśwież plac zabaw",
     "res": "Rozdzielczość",
     "resJsonAsPromise": "res.json() jako Obietnica",
     "resetPassword": "Zresetuj hasło",

@@ -52,7 +52,7 @@ export function ByBleverseSheet() {
               <h3 className="mb-4 text-sm font-semibold">✨ Versator Spaces</h3>
               <div className="space-y-4">
                 <Link
-                  href="https://docs.versator.org"
+                  href="https://docs.reliverse.org"
                   className="sheet-link"
                   target="_blank"
                 >
@@ -82,7 +82,7 @@ export function ByBleverseSheet() {
               <h3 className="mb-4 text-sm font-semibold">🧿 Nazar Kornienko</h3>
               <div className="space-y-4">
                 <Link
-                  href="https://blefnk.versator.org"
+                  href="https://blefnk.reliverse.org"
                   className="sheet-link"
                   target="_blank"
                 >

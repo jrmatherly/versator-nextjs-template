@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
     {
       name: "Versator",
-      url: "https://versator.org",
+      url: "https://reliverse.org",
     },
   ],
   creator: "Bleverse",

@@ -7,7 +7,7 @@ export default function AppFooter() {
       <div className="flex-1 flex justify-center">
         <nav className="flex space-x-4 rounded-full py-4 px-6">
           <Link
-            href="https://docs.versator.org/versator"
+            href="https://docs.reliverse.org/versator"
             target="_blank"
             className="inline-flex gap-0.5 items-center hover:text-foreground"
           >

@@ -1,8 +1,8 @@
 export const app = {
   shortName: "Versator",
   name: "Versator – The Next.js Template for Your eCommerce – by Bleverse",
-  url: "https://versator.com",
-  ogImage: "https://versator.com/og.jpg",
+  url: "https://versator.relivator.com",
+  ogImage: "https://versator.relivator.com/og.jpg",
   description:
     "Versator is the Next.js template making it easy to build the powerful eCommerce platforms.",
   links: {

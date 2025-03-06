@@ -17,8 +17,8 @@ export const siteConfig = {
   name: "Versator",
   description:
     "An open source e-commerce shop built with everything new in Next.js",
-  url: "https://versator.com",
-  ogImage: "https://versator.com/og.png",
+  url: "https://versator.relivator.com",
+  ogImage: "https://versator.relivator.com/og.png",
   links,
   mainNav: [
     {

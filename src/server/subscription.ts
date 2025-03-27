@@ -13,7 +13,7 @@ export function getPlanLimits({ planId }: { planId?: Plan["id"] }) {
 
   const [storeLimit, productLimit] = features.map((feature) => {
     const [value] = /\d+/.exec(feature) || [];
-    return value ? parseInt(value, 10) : 0;
+    return value ? Number.parseInt(value, 10) : 0;
   });
 
   return { storeLimit: storeLimit ?? 0, productLimit: productLimit ?? 0 };

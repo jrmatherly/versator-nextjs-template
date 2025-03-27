@@ -211,9 +211,9 @@ export async function getStoreOrders(input: {
       ordersSearchParamsSchema.parse(input.searchParams);
 
     // Fallback page for invalid page numbers
-    const fallbackPage = isNaN(page) || page < 1 ? 1 : page;
+    const fallbackPage = Number.isNaN(page) || page < 1 ? 1 : page;
     // Number of items per page
-    const limit = isNaN(per_page) ? 10 : per_page;
+    const limit = Number.isNaN(per_page) ? 10 : per_page;
     // Number of items to skip
     const offset = fallbackPage > 0 ? (fallbackPage - 1) * limit : 0;
     // Column and order to sort by

@@ -1,0 +1,177 @@
+---
+
+# Technology Stack and Constraints
+
+## Core Technologies
+- Node.js: ^20.0.0
+- Next.js: ^15.2.0
+- React: ^19.0.0
+- AI Model: claude-3-5-sonnet-20241022
+- AI Model: claude-3-7-sonnet-20250224
+
+## Frontend
+- HeroUI: ^2.7.4 (previously known as NextUI)
+- Aceternity, MagicUI, Shadcn UI
+- Tailwind CSS: ^3.4.17
+- Tailwind Animate: ^1.0.7
+- Tailwind Merge: 2.6.0
+- Framer Motion: ^11.18.2
+- Zod: ^3.24.2
+
+## Backend
+- Clerk Authentication: ^6
+
+## Development Tools
+- npm: ^11.1.0
+- Autoprefixer: ^10.4.21
+- Biome: ^1.9.4
+- PostCSS: ^8.5.3
+- Tailwind Variants: ^0.3.1
+- TypeScript: ^5.7.3
+
+## Analytics
+- Posthog: ^1.232.4
+
+## Blog
+- Notion: ^7.3.0
+
+## Monitoring
+- Sentry: ^9
+
+# Project Structure Convention
+
+```
+spoons-of-salt/
+├── app/
+│   ├── about/
+│   │   └── contact/
+│   │   └── support/
+│   │   └── us/
+│   │   └── work/
+│   ├── account/
+│   │   └── dashboard/
+│   ├── admin/
+│   ├── api/
+│   ├── auth/
+│   │   └── sign-in/
+│   │   └── sign-up/
+│   ├── donate/
+│   ├── events/
+│   │   └── previous/
+│   │   └── upcoming/
+│   ├── involved/
+│   │   └── fundraising/
+│   │   └── volunteer/
+│   ├── newsletter/
+│   ├── policy/
+│   │   └── privacy/
+│   │   └── tos/
+│   ├── resources/
+│   │   └── blog/
+│   │   └── faq/
+│   │   └── you/
+│   ├── shop/
+│   │   └── store/
+│   ├── support-groups/
+│   ├── favicon.ico
+│   ├── global-error.tsx
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── not-found.tsx
+│   ├── opengraph-image.tsx
+│   ├── page.tsx
+│   └── sitemap.tsx
+├── components/
+│   ├── auth/
+│   ├── home/
+│   ├── icons/
+│   ├── layout/
+│   │   └── home/
+│   ├── magicui/
+│   ├── motion-primitives/
+│   ├── reactbits/
+│   ├── ui/
+│   ├── icons.tsx
+│   └── theme-switch.tsx
+├── config/
+│   ├── certificates.ts
+│   ├── env.ts
+│   ├── metadata.ts
+│   ├── settings.ts
+│   └── site.ts
+├── hooks/
+│   ├── use-canvas-cursor.ts
+│   ├── use-hash-scroll.ts
+│   ├── use-intersection-observer.ts
+│   ├── use-media-query.ts
+│   ├── use-mobile.tsx
+│   ├── use-scroll.ts
+│   ├── use-sonner-toast.tsx
+│   └── use-toast.ts
+├── lib/
+│   ├── sentry-utils.ts
+│   └── utils.ts
+├── providers/
+│   ├── sentry-user-provider.tsx
+│   └── theme-provider.tsx
+├── public/
+│   ├── auth_images/
+│   ├── downloads/
+│   ├── images/
+│   ├── videos/
+│   ├── browserconfig.xml
+│   └── manifest.json
+├── scripts/
+├── styles/
+│   ├── fonts/
+│   ├── globals.css
+│   └── primitives.ts
+├── types/
+│   └── icons.ts
+├── utilities/
+│   └── logger.ts
+├── .dockerignore
+├── .env
+├── .env.example
+├── .gitignore
+├── .npmrc
+├── .nvmrc
+├── .windsurfrules
+├── biome.jsonc
+├── components.json
+├── docker-compose.yml
+├── DOCKER-README.md
+├── Dockerfile
+├── jest.config.js
+├── jest.setup.js
+├── instrumentation.ts
+├── middleware.ts
+├── next-sitemap.config.js
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── robots.txt
+├── sentry.client.config.ts
+├── sentry.edge.config.ts
+├── sentry.server.config.ts
+├── tailwind.config.ts
+└── tsconfig.json
+
+## Important Constraints
+
+1. **Version Management**
+   - Technology stack version changes require approval
+
+2. **Code Placement**
+   - UI components in `/components/ui/`
+   - Layouts in `/components/layout/`
+   - API endpoints in `/app/api/[endpoint]/route.ts`
+   - Reusable components in `/components/`
+   - Constant Configuration in `/config/`
+   - Custom Hooks in `/hooks/`
+   - Common Utility files in `/lib/`
+   - API-Related in `/lib/api/`
+
+---

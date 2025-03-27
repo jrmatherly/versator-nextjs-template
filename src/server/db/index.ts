@@ -1,9 +1,9 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
+import { DATABASE_URL } from '~/config/site';
+import { env } from '~/env';
 
-import { env } from "~/env";
-
-import * as schema from "./schema";
+import * as schema from './schema';
 
 /**
  * Cache the database connection in development. This avoids creating a new connection on every HMR
@@ -13,8 +13,8 @@ const globalForDb = globalThis as unknown as {
   conn: postgres.Sql | undefined;
 };
 
-const conn = globalForDb.conn ?? postgres(env.DATABASE_URL);
-if (env.NODE_ENV !== "production") {
+const conn = globalForDb.conn ?? postgres(DATABASE_URL);
+if (env.NODE_ENV !== 'production') {
   globalForDb.conn = conn;
 }
 

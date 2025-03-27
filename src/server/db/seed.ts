@@ -1,34 +1,34 @@
-import "dotenv/config";
-import consola from "consola";
-import { eq } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/node-postgres";
+import 'dotenv/config';
+import consola from 'consola';
+import { eq } from 'drizzle-orm';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { DATABASE_URL } from '~/config/site';
 
-import { env } from "~/env";
 import {
   revalidateItems,
   seedCategories,
   seedSubcategories,
-} from "~/server/actions/seed";
-import { usersTable } from "~/server/db/schema";
+} from '~/server/actions/seed';
+import { usersTable } from '~/server/db/schema';
 
 // Initialize the database connection
-const db = drizzle(env.DATABASE_URL);
+const db = drizzle(DATABASE_URL);
 
 async function main() {
-  consola.info("⏳ Running seed...");
+  consola.info('⏳ Running seed...');
   const start = Date.now();
 
   const user = {
-    name: "John",
+    name: 'John',
     age: 30,
-    email: "john@example.com",
-    currentStoreId: "",
+    email: 'john@example.com',
+    currentStoreId: '',
   };
   const { email } = user;
 
   try {
     // Start transaction
-    await db.transaction(async (trx) => {
+    await db.transaction(async trx => {
       // Check if the user already exists
       const existingUser = await trx
         .select()
@@ -39,8 +39,8 @@ async function main() {
       if (existingUser.length > 0) {
         consola.info(`User with email ${email} already exists!`);
         const confirm = await consola.prompt(
-          "Do you want to remove the user?",
-          { type: "confirm" },
+          'Do you want to remove the user?',
+          { type: 'confirm' }
         );
 
         if (confirm) {
@@ -49,14 +49,14 @@ async function main() {
 
           // Recreate the user after deletion
           await trx.insert(usersTable).values(user);
-          consola.success("New user created after deletion!");
+          consola.success('New user created after deletion!');
         } else {
-          consola.info("Skipped user deletion.");
+          consola.info('Skipped user deletion.');
         }
       } else {
         // Insert the new user if not existing
         await trx.insert(usersTable).values(user);
-        consola.success("New user created!");
+        consola.success('New user created!');
       }
 
       // Update user's age
@@ -64,7 +64,7 @@ async function main() {
         .update(usersTable)
         .set({ age: 31 })
         .where(eq(usersTable.email, email));
-      consola.success("User info updated!");
+      consola.success('User info updated!');
 
       // Seed additional data
       await seedCategories();
@@ -75,7 +75,7 @@ async function main() {
       consola.success(`✅ Seed completed in ${end - start}ms`);
     });
   } catch (error) {
-    consola.error("❌ Seed failed:", error);
+    consola.error('❌ Seed failed:', error);
     process.exit(1);
   }
 
@@ -83,7 +83,7 @@ async function main() {
 }
 
 // Run main function and handle any uncaught errors
-main().catch((err) => {
+main().catch(err => {
   consola.error("❌ Seed's main function failed");
   consola.error(err);
   process.exit(1);

@@ -1,36 +1,148 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.codeActionsOnSave": {
-    "quickfix.biome": "explicit",
-    "source.addMissingImports": "never",
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never",
-    "source.removeUnused": "never"
-  },
-  "eslint.ignoreUntitled": true,
-  "eslint.rules.customizations": [
-    {
-      "rule": "perfectionist/sort-imports",
-      "severity": "warn"
-    }
-  ],
-  "markdownlint.config": {
-    "MD033": false
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "workbench.activityBar.orientation": "vertical",
-  "openMultipleFiles.limit": 700,
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "i18n-ally.localesPaths": ["messages"],
-  "i18n-ally.enabledFrameworks": ["react"],
-  "i18n-ally.sourceLanguage": "en",
-  "i18n-ally.autoDetection": true,
-  "i18n-ally.keystyle": "nested",
-  "files.associations": {
-    ".reliverse": "jsonc"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.codeActionsOnSave": {
+        "quickfix.biome": "explicit",
+        "source.addMissingImports": "never",
+        "source.organizeImports.biome": "explicit",
+        "source.removeUnused": "never"
+    },
+    "markdownlint.config": {
+        "MD033": false
+    },
+    "emmet.includeLanguages": {
+        "postcss": "css"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.ts": "typescript",
+        ".reliverse": "jsonc"
+    },
+    "[tailwindcss]": {},
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "tailwindCSS.includeLanguages": {
+        "typescript": "javascript",
+        "typescriptreact": "javascript",
+        "markdown": "html",
+        "plaintext": "html"
+    },
+    "tailwindCSS.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/.next/**",
+        "**/dist/**",
+        "**/.hg/**",
+        "**/.svn/**",
+        "**/docker/**",
+        "**/.turbo/**",
+        "**/.vercel/**"
+    ],
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "([\"'`][^\"'`]*.*?[\"'`])",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        [
+            "clsx\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ],
+        [
+            "cn\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ],
+        [
+            "cva\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        [
+            "cx\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ],
+        [
+            "cx\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ]
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "workbench.activityBar.orientation": "vertical",
+    "openMultipleFiles.limit": 700,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "i18n-ally.localesPaths": [
+        "messages"
+    ],
+    "i18n-ally.enabledFrameworks": [
+        "react"
+    ],
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.autoDetection": true,
+    "i18n-ally.keystyle": "nested",
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+    "tailwindCSS.lint.cssConflict": "ignore",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }

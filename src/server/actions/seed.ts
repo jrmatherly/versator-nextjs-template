@@ -1,27 +1,27 @@
-import { faker } from "@faker-js/faker";
-import consola from "consola";
-import { eq } from "drizzle-orm";
-import { ofetch } from "ofetch";
-
-import { productConfig } from "~/config/product";
-import { db } from "~/server/db";
+import { faker } from '@faker-js/faker';
+import consola from 'consola';
+import { eq } from 'drizzle-orm';
+import { ofetch } from 'ofetch';
+import { productConfig } from '~/config/product';
+import { db } from '~/server/db';
 import {
-  categories,
-  products,
-  subcategories as subcategoriesTable,
   type Category,
   type Product,
   type Subcategory,
-} from "~/server/db/schema";
-import { generateId } from "~/server/id";
-import { absoluteUrl, slugify } from "~/server/utils";
+  categories,
+  products,
+  subcategories as subcategoriesTable,
+} from '~/server/db/schema';
+import { generateId } from '~/server/id';
+import { dbLogger } from '~/server/logger';
+import { absoluteUrl, slugify } from '~/server/utils';
 
 // Utility function to handle errors with user prompt
 async function handleSeedingError(error: unknown, taskName: string) {
-  consola.error(`❌ Failed to ${taskName}:`, error);
+  dbLogger.error(`❌ Failed to ${taskName}:`, error);
   const confirmSkip = await consola.prompt(
     `Failed to ${taskName}. Do you want to skip and continue?`,
-    { type: "confirm" },
+    { type: 'confirm' }
   );
   if (!confirmSkip) {
     throw error;
@@ -30,21 +30,21 @@ async function handleSeedingError(error: unknown, taskName: string) {
 
 // Revalidate items, with error handling and prompt to skip if a connection issue occurs
 export async function revalidateItems() {
-  consola.info("🔄 Revalidating items...");
+  dbLogger.info('🔄 Revalidating items...');
   try {
-    await ofetch(absoluteUrl("/api/revalidate"));
-    consola.success("✅ Revalidation complete.");
+    await ofetch(absoluteUrl('/api/revalidate'));
+    dbLogger.info('✅ Revalidation complete.');
   } catch (error) {
-    await handleSeedingError(error, "revalidate items");
+    await handleSeedingError(error, 'revalidate items');
   }
 }
 
 // Seed categories with error handling
 export async function seedCategories() {
-  consola.info("🌱 Seeding categories...");
+  dbLogger.info('🌱 Seeding categories...');
   try {
-    const data: Omit<Category, "createdAt" | "updatedAt">[] =
-      productConfig.categories.map((category) => ({
+    const data: Omit<Category, 'createdAt' | 'updatedAt'>[] =
+      productConfig.categories.map(category => ({
         id: category.id,
         name: category.name,
         slug: slugify(category.name),
@@ -52,31 +52,31 @@ export async function seedCategories() {
         image: category.image,
       }));
 
-    await db.delete(categories).where(eq(categories.id, "1"));
-    consola.info(`📝 Inserting ${data.length} categories`);
+    await db.delete(categories).where(eq(categories.id, '1'));
+    dbLogger.info(`📝 Inserting ${data.length} categories`);
     await db.insert(categories).values(data);
-    consola.success("✅ Categories seeded successfully.");
+    dbLogger.info('✅ Categories seeded successfully.');
   } catch (error) {
-    await handleSeedingError(error, "seed categories");
+    await handleSeedingError(error, 'seed categories');
   }
 }
 
 // Seed subcategories with error handling
 export async function seedSubcategories() {
-  consola.info("🌱 Seeding subcategories...");
+  consola.info('🌱 Seeding subcategories...');
   try {
-    const data: Omit<Subcategory, "createdAt" | "updatedAt">[] = [];
+    const data: Omit<Subcategory, 'createdAt' | 'updatedAt'>[] = [];
     const allCategories = await db
       .select({ id: categories.id, name: categories.name })
       .from(categories);
 
-    allCategories.forEach((category) => {
+    for (const category of allCategories) {
       const subcategoriesConfig = productConfig.categories.find(
-        (c) => c.name === category.name,
+        c => c.name === category.name
       )?.subcategories;
 
       if (subcategoriesConfig) {
-        subcategoriesConfig.forEach((subcategory) => {
+        for (const subcategory of subcategoriesConfig) {
           data.push({
             id: subcategory.id,
             name: subcategory.name,
@@ -84,16 +84,16 @@ export async function seedSubcategories() {
             categoryId: category.id,
             description: subcategory.description,
           });
-        });
+        }
       }
-    });
+    }
 
-    await db.delete(subcategoriesTable).where(eq(subcategoriesTable.id, "1"));
-    consola.info(`📝 Inserting ${data.length} subcategories`);
+    await db.delete(subcategoriesTable).where(eq(subcategoriesTable.id, '1'));
+    dbLogger.info(`📝 Inserting ${data.length} subcategories`);
     await db.insert(subcategoriesTable).values(data);
-    consola.success("✅ Subcategories seeded successfully.");
+    dbLogger.info('✅ Subcategories seeded successfully.');
   } catch (error) {
-    await handleSeedingError(error, "seed subcategories");
+    await handleSeedingError(error, 'seed subcategories');
   }
 }
 
@@ -102,10 +102,10 @@ export async function seedProducts({
   storeId,
   count = 10,
 }: { storeId: string; count?: number }) {
-  consola.info("🌱 Seeding products...");
+  dbLogger.info('🌱 Seeding products...');
   try {
-    const data: Omit<Product, "createdAt" | "updatedAt">[] = [];
-    const categoryIds = productConfig.categories.map((category) => category.id);
+    const data: Omit<Product, 'createdAt' | 'updatedAt'>[] = [];
+    const categoryIds = productConfig.categories.map(category => category.id);
 
     // Fetch subcategories for each category and store in a map
     const allSubcategoriesMap: Record<string, { id: string }[]> = {};
@@ -134,7 +134,7 @@ export async function seedProducts({
         price: faker.commerce.price(),
         originalPrice: faker.commerce.price(),
         status:
-          faker.helpers.arrayElement(products.status.enumValues) ?? "active",
+          faker.helpers.arrayElement(products.status.enumValues) ?? 'active',
         images: null,
         categoryId,
         subcategoryId,
@@ -145,10 +145,10 @@ export async function seedProducts({
     }
 
     await db.delete(products).where(eq(products.storeId, storeId));
-    consola.info(`📝 Inserting ${data.length} products`);
+    dbLogger.info(`📝 Inserting ${data.length} products`);
     await db.insert(products).values(data);
-    consola.success("✅ Products seeded successfully.");
+    dbLogger.info('✅ Products seeded successfully.');
   } catch (error) {
-    await handleSeedingError(error, "seed products");
+    await handleSeedingError(error, 'seed products');
   }
 }

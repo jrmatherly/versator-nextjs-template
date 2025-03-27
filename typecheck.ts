@@ -1,12 +1,13 @@
-import { execa } from "execa";
-import { readFile, writeFile } from "fs-extra";
-import { join } from "pathe";
+import { execa } from 'execa';
+import { readFile, writeFile } from 'fs-extra';
+import { join } from 'pathe';
+import { logger } from '~/server/logger';
 
 const verbose = false;
 
 async function readTSConfig(path: string) {
   try {
-    const content = await readFile(path, "utf-8");
+    const content = await readFile(path, 'utf-8');
     return JSON.parse(content);
   } catch (error: any) {
     throw new Error(`Failed to read tsconfig.json: ${error.message}`);
@@ -23,22 +24,22 @@ async function writeTSConfig(path: string, config: Record<string, unknown>) {
 
 async function getPackageManager(): Promise<string> {
   try {
-    const configPath = join(process.cwd(), ".reliverse");
-    const content = await readFile(configPath, "utf-8");
+    const configPath = join(process.cwd(), '.reliverse');
+    const content = await readFile(configPath, 'utf-8');
     const config = JSON.parse(content);
     const configuredManager = config.experimental?.projectPackageManager;
 
     // If the configured manager is one of the standard ones, use it
-    if (["npm", "pnpm", "yarn", "bun"].includes(configuredManager)) {
+    if (['npm', 'pnpm', 'yarn', 'bun'].includes(configuredManager)) {
       return configuredManager;
     }
 
     // Otherwise try bun -> pnpm -> npm in order
-    for (const manager of ["bun", "pnpm", "npm"]) {
+    for (const manager of ['bun', 'pnpm', 'npm']) {
       try {
-        await execa(manager, ["--version"]);
+        await execa(manager, ['--version']);
         if (verbose) {
-          console.log(`Using ${manager} as package manager`);
+          logger.info(`Using ${manager} as package manager`);
         }
         return manager;
       } catch {
@@ -47,40 +48,40 @@ async function getPackageManager(): Promise<string> {
     }
 
     // If nothing else works, fall back to bun
-    return "bun";
+    return 'bun';
   } catch (error: any) {
     if (verbose) {
-      console.warn(
-        "Failed to read .reliverse config, falling back to bun:",
-        error.message,
+      logger.warn(
+        'Failed to read .reliverse config, falling back to bun:',
+        error.message
       );
     }
-    return "bun";
+    return 'bun';
   }
 }
 
 async function checkAndRemoveNextTypes() {
-  const tsconfigPath = join(process.cwd(), "tsconfig.json");
+  const tsconfigPath = join(process.cwd(), 'tsconfig.json');
   const packageManager = await getPackageManager();
 
   // Read tsconfig.json
   const tsconfig = await readTSConfig(tsconfigPath);
   if (!tsconfig || !Array.isArray(tsconfig.include)) {
     if (verbose) {
-      console.log(
-        'No "include" array found in tsconfig.json. Nothing to remove.',
+      logger.info(
+        'No "include" array found in tsconfig.json. Nothing to remove.'
       );
     }
     return;
   }
 
   // Check if .next/types/**/*.ts is in the include array
-  const nextTypesIndex = tsconfig.include.indexOf(".next/types/**/*.ts");
+  const nextTypesIndex = tsconfig.include.indexOf('.next/types/**/*.ts');
 
   if (nextTypesIndex === -1) {
     if (verbose) {
-      console.log(
-        'No ".next/types/**/*.ts" entry found in the "include". Skipping.',
+      logger.info(
+        'No ".next/types/**/*.ts" entry found in the "include". Skipping.'
       );
     }
     return;
@@ -92,10 +93,10 @@ async function checkAndRemoveNextTypes() {
 
   try {
     // Use the configured package manager instead of hardcoded "bun"
-    await execa(packageManager, ["tsc", "--noEmit"], { stdio: "inherit" });
+    await execa(packageManager, ['tsc', '--noEmit'], { stdio: 'inherit' });
   } finally {
     // Revert changes
-    tsconfig.include.splice(nextTypesIndex, 0, ".next/types/**/*.ts");
+    tsconfig.include.splice(nextTypesIndex, 0, '.next/types/**/*.ts');
     await writeTSConfig(tsconfigPath, tsconfig);
   }
 }
@@ -104,7 +105,7 @@ async function main() {
   try {
     await checkAndRemoveNextTypes();
   } catch (error: any) {
-    console.error("Error:", error);
+    logger.error('Error:', error);
     process.exit(1);
   }
 }

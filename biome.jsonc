@@ -1,5 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "css": {
     "formatter": {
       "enabled": false,
@@ -17,10 +22,76 @@
       "cssModules": true
     }
   },
+  "files": {
+    "ignoreUnknown": false,
+    "include": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.mjs",
+      "**/*.cjs",
+      "**/*.json",
+      "**/*.md",
+      "**/*.mdx",
+      "**/*.css",
+      "**/*.scss",
+      "**/*.yaml",
+      "**/*.yml"
+    ],
+    "ignore": [
+      "./encore_llm_instruct.txt",
+      "lib/clients/encoreClient.ts",
+      "OLD_FILES/*",
+      ".now/*",
+      "./.next/*",
+      "**/*.css",
+      "**/.changeset",
+      "**/dist",
+      "esm/*",
+      "public/*",
+      "tests/*",
+      "scripts/*",
+      "**/*.config.js",
+      "**/.DS_Store",
+      "**/node_modules",
+      "**/coverage",
+      "**/.next",
+      "**/build",
+      "./out",
+      "./.pnp",
+      "**/.pnp.js",
+      "./coverage",
+      "./.next/",
+      "./build",
+      "**/*.pem",
+      "**/.eslintrc.json",
+      "**/.eslintignore",
+      "**/.prettierignore",
+      "./.vscode/settings.json",
+      "**/Dockerfile",
+      "**/docker-compose.yaml",
+      "**/eslint.config.js",
+      "**/npm-debug.log*",
+      "**/yarn-debug.log*",
+      "**/yarn-error.log*",
+      "**/.pnpm-debug.log*",
+      "**/.env.local",
+      "**/.env.development.local",
+      "**/.env.test.local",
+      "**/.env.production.local",
+      "**/.vercel",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "./docs/*",
+      "./db/migrations/meta",
+      "./DOCKER-README.md",
+      "./python_backend/cache/*",
+      "**/hooks/model/**"
+    ]
+  },
   "formatter": {
-    "attributePosition": "auto",
     "enabled": true,
-    "formatWithErrors": false,
     "ignore": [
       ".git/",
       ".idea/",
@@ -37,27 +108,169 @@
       "node_modules/",
       "public/"
     ],
+    "useEditorconfig": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 80
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "organizeImports": {
+    "enabled": true,
+    "include": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.mjs",
+      "**/*.cjs",
+      "**/*.json",
+      "**/*.md",
+      "**/*.mdx",
+      "**/*.css",
+      "**/*.scss",
+      "**/*.yaml",
+      "**/*.yml"
+    ],
+    "ignore": [
+      "./encore_llm_instruct.txt",
+      "lib/clients/encoreClient.ts",
+      "OLD_FILES/*",
+      ".now/*",
+      "./.next/*",
+      "**/*.css",
+      "**/.changeset",
+      "**/dist",
+      "esm/*",
+      "public/*",
+      "tests/*",
+      "scripts/*",
+      "**/*.config.js",
+      "**/.DS_Store",
+      "**/node_modules",
+      "**/coverage",
+      "**/.next",
+      "**/build",
+      "./out",
+      "./.pnp",
+      "**/.pnp.js",
+      "./coverage",
+      "./.next/",
+      "./build",
+      "**/*.pem",
+      "**/.eslintrc.json",
+      "**/.eslintignore",
+      "**/.prettierignore",
+      "./.vscode/settings.json",
+      "**/Dockerfile",
+      "**/docker-compose.yaml",
+      "**/eslint.config.js",
+      "**/npm-debug.log*",
+      "**/yarn-debug.log*",
+      "**/yarn-error.log*",
+      "**/.pnpm-debug.log*",
+      "**/.env.local",
+      "**/.env.development.local",
+      "**/.env.test.local",
+      "**/.env.production.local",
+      "**/.vercel",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "./docs/*",
+      "./db/migrations/meta",
+      "**/hooks/model/**"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noAccessKey": "error",
+        "noAriaUnsupportedElements": "error",
+        "noAutofocus": "error",
+        "noBlankTarget": "error",
+        "noDistractingElements": "error",
+        "noHeaderScope": "error",
+        "noInteractiveElementToNoninteractiveRole": "error",
+        "noLabelWithoutControl": "error",
+        "noNoninteractiveElementToInteractiveRole": "error",
+        "noNoninteractiveTabindex": "error",
+        "noPositiveTabindex": "error",
+        "noRedundantAlt": "error",
+        "noRedundantRoles": "error",
+        "useAltText": "error",
+        "useAnchorContent": "error",
+        "useAriaActivedescendantWithTabindex": "error",
+        "useAriaPropsForRole": "error",
+        "useFocusableInteractive": "warn",
+        "useHeadingContent": "error",
+        "useHtmlLang": "error",
+        "useIframeTitle": "error",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "error",
+        "useMediaCaption": "error",
+        "useSemanticElements": "warn",
+        "useValidAnchor": "error",
+        "useValidAriaProps": "error",
+        "useValidAriaRole": "error",
+        "useValidAriaValues": "error"
+      },
+      "complexity": {
+        "noUselessThisAlias": "error",
+        "noUselessTypeConstraint": "error",
+        "useArrowFunction": "off"
+      },
+      "correctness": {
+        "noChildrenProp": "error",
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "off",
+        "useArrayLiterals": "off",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error",
+        "useJsxKeyInIterable": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtmlWithChildren": "error"
+      },
+      "style": {
+        "noNamespace": "error",
+        "noNonNullAssertion": "warn",
+        "useAsConstAssertion": "error",
+        "useBlockStatements": "off",
+        "useImportType": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "error",
+        "noCommentText": "error",
+        "noConsole": {
+          "level": "warn",
+          "options": {
+            "allow": ["warn", "error"]
+          }
+        },
+        "noDuplicateJsxProps": "error",
+        "noExplicitAny": "warn",
+        "noExtraNonNullAssertion": "error",
+        "noMisleadingInstantiator": "error",
+        "noUnsafeDeclarationMerging": "error",
+        "useNamespaceKeyword": "error"
+      }
+    }
   },
   "javascript": {
     "formatter": {
-      "arrowParentheses": "always",
-      "attributePosition": "auto",
-      "bracketSameLine": false,
-      "bracketSpacing": true,
-      "enabled": true,
-      "indentStyle": "space",
-      "indentWidth": 2,
       "jsxQuoteStyle": "double",
-      "lineEnding": "lf",
-      "lineWidth": 80,
       "quoteProperties": "asNeeded",
-      "quoteStyle": "double",
+      "trailingCommas": "es5",
       "semicolons": "always",
-      "trailingCommas": "all"
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
     }
   },
   "json": {
@@ -77,142 +290,57 @@
       "allowTrailingCommas": false
     }
   },
-  "linter": {
-    "enabled": true,
-    "ignore": [
-      ".git/",
-      ".idea/",
-      ".docs/",
-      ".million/",
-      ".next/",
-      ".turbo/",
-      ".vercel/",
-      "addons/.output/",
-      "build/",
-      "cluster/",
-      "dist/",
-      "drizzle/",
-      "node_modules/",
-      "public/"
-    ],
-    "rules": {
-      "a11y": {
-        "noSvgWithoutTitle": "off",
-        "noAriaHiddenOnFocusable": "off",
-        "noBlankTarget": "off",
-        "noLabelWithoutControl": "off",
-        "noNoninteractiveElementToInteractiveRole": "off",
-        "noRedundantRoles": "off",
-        "useButtonType": "off",
-        "useFocusableInteractive": "off",
-        "useKeyWithClickEvents": "off",
-        "useSemanticElements": "off"
-      },
-      "complexity": {
-        "noStaticOnlyClass": "off",
-        "noThisInStatic": "off",
-        "noBannedTypes": "off",
-        "noExtraBooleanCast": "off",
-        "noForEach": "off",
-        "noUselessFragments": "off",
-        "noUselessLoneBlockStatements": "off",
-        "useArrowFunction": "off",
-        "useFlatMap": "off",
-        "useLiteralKeys": "off",
-        "useOptionalChain": "off",
-        "useRegexLiterals": "off",
-        "useSimpleNumberKeys": "off"
-      },
-      "correctness": {
-        "noChildrenProp": "off",
-        "noConstantCondition": "off",
-        "noEmptyPattern": "off",
-        "noInnerDeclarations": "off",
-        "noInvalidConstructorSuper": "off",
-        "noInvalidNewBuiltin": "off",
-        "noInvalidUseBeforeDeclaration": "off",
-        "noPrecisionLoss": "off",
-        "noRenderReturnValue": "off",
-        "noStringCaseMismatch": "off",
-        "noSwitchDeclarations": "off",
-        "noUndeclaredVariables": "off",
-        "noUnnecessaryContinue": "off",
-        "noUnreachable": "off",
-        "noUnreachableSuper": "off",
-        "noUnsafeFinally": "off",
-        "noUnsafeOptionalChaining": "off",
-        "noUnusedLabels": "off",
-        "noUnusedPrivateClassMembers": "off",
-        "noUnusedVariables": "off",
-        "noVoidElementsWithChildren": "off",
-        "noVoidTypeReturn": "off",
-        "useExhaustiveDependencies": "off",
-        "useHookAtTopLevel": "off",
-        "useIsNan": "off",
-        "useValidForDirection": "off",
-        "useYield": "off"
-      },
-      "performance": {
-        "noAccumulatingSpread": "off",
-        "noDelete": "off"
-      },
-      "recommended": true,
-      "security": {
-        "noDangerouslySetInnerHtml": "off"
-      },
-      "style": {
-        "noCommaOperator": "off",
-        "noInferrableTypes": "off",
-        "noNonNullAssertion": "off",
-        "noParameterAssign": "off",
-        "noUnusedTemplateLiteral": "off",
-        "noUselessElse": "off",
-        "noVar": "off",
-        "useConst": "off",
-        "useDefaultParameterLast": "off",
-        "useDefaultSwitchClause": "off",
-        "useEnumInitializers": "off",
-        "useExportType": "off",
-        "useImportType": "off",
-        "useNamingConvention": "off",
-        "useNodejsImportProtocol": "off",
-        "useNumberNamespace": "off",
-        "useSelfClosingElements": "off",
-        "useShorthandFunctionType": "off",
-        "useTemplate": "off",
-        "useWhile": "off"
-      },
-      "suspicious": {
-        "noApproximativeNumericConstant": "off",
-        "noArrayIndexKey": "off",
-        "noAssignInExpressions": "off",
-        "noCommentText": "off",
-        "noCompareNegZero": "off",
-        "noConfusingLabels": "off",
-        "noConfusingVoidType": "off",
-        "noConstEnum": "off",
-        "noDoubleEquals": "off",
-        "noDuplicateObjectKeys": "off",
-        "noEmptyInterface": "off",
-        "noExplicitAny": "off",
-        "noExtraNonNullAssertion": "off",
-        "noGlobalIsFinite": "off",
-        "noGlobalIsNan": "off",
-        "noImplicitAnyLet": "off",
-        "noMisleadingCharacterClass": "off",
-        "noMisrefactoredShorthandAssign": "off",
-        "noRedeclare": "off",
-        "noSelfCompare": "off",
-        "noShadowRestrictedNames": "off",
-        "noSparseArray": "off",
-        "noUnsafeNegation": "off",
-        "useIsArray": "off",
-        "useNamespaceKeyword": "off",
-        "useValidTypeof": "off"
+  "overrides": [
+    {
+      "include": ["*.js", "*.mjs", "*.cjs", "*.ts", "*.tsx", "*.mts", "*.cts"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noConstAssign": "off",
+            "noGlobalObjectCalls": "off",
+            "noInvalidBuiltinInstantiation": "off",
+            "noInvalidConstructorSuper": "off",
+            "noNewSymbol": "off",
+            "noSetterReturn": "off",
+            "noUndeclaredVariables": "off",
+            "noUnreachable": "off",
+            "noUnreachableSuper": "off"
+          },
+          "style": {
+            "noArguments": "error",
+            "noVar": "error",
+            "useConst": "error"
+          },
+          "suspicious": {
+            "noClassAssign": "off",
+            "noDuplicateClassMembers": "off",
+            "noDuplicateObjectKeys": "off",
+            "noDuplicateParameters": "off",
+            "noFunctionAssign": "off",
+            "noImportAssign": "off",
+            "noRedeclare": "off",
+            "noUnsafeNegation": "off",
+            "useGetterReturn": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["**/*.test.ts", "**/*.test.tsx", "**/tests/**/*"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "useExhaustiveDependencies": "off"
+          },
+          "style": {
+            "noNonNullAssertion": "off"
+          },
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
+        }
       }
     }
-  },
-  "organizeImports": {
-    "enabled": false
-  }
+  ]
 }

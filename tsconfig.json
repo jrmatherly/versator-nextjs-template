@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "ES2022",
@@ -7,10 +8,17 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
+    /* Strictness */
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noUncheckedIndexedAccess": true,
     "checkJs": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    /* Bundled projects */
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "ES2022"
+    ],
     "noEmit": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -21,24 +29,37 @@
       }
     ],
     "incremental": true,
+    /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "typecheck.ts",
     "drizzle.config.ts",
-    "eslint.config.js",
     "next-env.d.ts",
     "next.config.ts",
-    "postcss.config.js",
+    "postcss.config.mjs",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/env.js",
+    "src/**/*.cjs",
+    "src/**/*.mjs",
+    "src/**/*.js",
+    "src/env.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.js",
     "tailwind.config.ts",
     ".next/types/**/*.ts",
+    "next-sitemap.config.cjs",
     "reliverse.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
